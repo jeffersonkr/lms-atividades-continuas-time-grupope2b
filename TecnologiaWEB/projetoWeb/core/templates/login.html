@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {%block conteudo %}
+
+<div class="row body-login">
+    <form method="POST" action="">
+        <div class="container">
+            <div class="input-field col s12">
+                <input id="email" name="email" type="email" class="validate">
+                <label for="email">Informe seu E-mail</label>
+            </div>
+
+
+            <div class="input-field col s12">
+                <input name="senha" id="idsenha" type="password" class="validate">
+                <label for="idsenha">Informe sua senha</label>
+            </div>
+
+            <div class="center-align">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Entrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
