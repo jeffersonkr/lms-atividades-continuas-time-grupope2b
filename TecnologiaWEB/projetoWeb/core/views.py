@@ -15,7 +15,7 @@ def contato(request):
         print("Assunto da mensagem: ",request.POST.get('opcao'))
         print("Texto da Mensagem: ",request.POST.get('mensagem'))
         print("Palavras chave: ",request.POST.get('selecao'))
-        
+        # Desse jeito só pegou uma palavra chave (a última).
     return render(request,'contato.html')
 
 def login(request):
@@ -28,6 +28,7 @@ def login(request):
         if request.POST.get('senha') == "teste123":
             print('Usuário',request.POST.get('email'), 'entrou com sucesso!')
             return render(request, 'index.html')# < -- BÔNUS: O login certo deve redirecionar para o index novamente! :-)
+            #Render não é redirect
         else:
             print('Usuário',request.POST.get('email'),' digitou a senha errada!')
             
