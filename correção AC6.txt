@@ -1,0 +1,9 @@
+Correção:
+
+Matrícula
+Seu formulário basicamente valida se só o primeiro estiver marcado.
+
+NovoALuno:
+Não há validação funcionando.
+
+Nota 2,0x       
