@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block conteudo %}
+    <div class="banner">
+        <img src="{% static 'imagens/search.png' %}">
+        <h1>A TECNOLOGIA MUDA O SEU FUTURO</h1>
+    </div>
+
+
+    <section class="cursos">
+        <h1>Conheça nossos cursos</h1>
+
+        <ul>
+            <li>
+                <img src="{% static 'imagens/mba.jpg' %}" alt="">
+                <a href="">MBA</a>
+            </li>
+            <li>
+                <img src="{% static 'imagens/tecnico.jpg' %}" alt="">
+                <a href="">Tecnico</a>
+            </li>
+            <li>
+                <img src="{% static 'imagens/up.jpg' %}" alt="">
+                <a href="">UP</a>
+            </li>
+            <li>
+                <img src="{% static 'imagens/graduacao.jpg' %}" alt="">
+                <a href="">graduação</a>
+            </li>
+
+        </ul>
+        <div class="texto">
+        <p>Considerada uma das melhores faculdades com foco em tecnologia do País, a Faculdade Impacta oferece cursos de Graduação,
+            Pós-Graduação e MBA e cursos técnicos. Conheça quais são as áreas de conhecimento que a Impacta aborda e saiba
+            um pouco mais sobre cada curso:</p>
+        </div>
+    </section>
+    {% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Faculdade Impacta</title>
+    <meta name="author" content="Adtile">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="{% static 'imagens/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" media="screen">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="menu">
+            <img src="{% static 'imagens/logo.png' %}" alt="">
+            <ul>
+                <li>
+                    <a href="#nossos_cursos">Nossos Cursos</a>
+                </li>
+                <li>
+                    <a href="{{ 'ListaAprovacao' }}">Candidatos</a>
+                </li>
+                <li>
+                    <a href="{{ 'cadAluno' }}">Cadastro de Aluno</a>
+                </li>
+                <li>
+                    <a href="{{ 'Lista' }}">Lista dos Cursos</a>
+                </li>
+                <li>
+                    <a href="#smartclass">SmartClass</a>
+                </li>
+                <li>
+                    <a href="#eventos">Eventos</a>
+                </li>
+                <li>
+                    <a href="#depoimentos">Depoimentos</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    
+    {% block conteudo %}{% endblock %}
+
+
+
+<footer class="footer">
+        <p></p><a href="#">Desenvolvido por: grupo OPE</a></p>
+</footer>
+</body>
+</html>

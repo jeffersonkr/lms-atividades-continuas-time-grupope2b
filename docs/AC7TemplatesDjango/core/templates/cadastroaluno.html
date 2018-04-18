@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Escola Virtual</title>
-  <link rel="stylesheet" href="css/form.css">
-  <script src="js/acoes.js" defer></script>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block conteudo %}
 
-
+<div class="container">
   <center>
     <h1>Impacta</h1>
     <h2>Cadastro de Alunos</h2>
@@ -142,8 +135,10 @@
      </p>
     </form>
   </center>
-                
-            
+</div>
+  {% endblock %}
+  
+
                          
                      
                      
@@ -151,6 +146,3 @@
                    
              
      
-
-</body>
-</html>
