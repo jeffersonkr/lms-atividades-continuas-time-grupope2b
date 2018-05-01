@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block conteudo %}
+<div class="container">
+    <h1 id="textList">Lista dos Cursos</h1>
+    <table class="tabela">
+        <tr>
+            <td class="nomeCurso">Nome do curso</td>
+        </tr>
+        {% for curso in cursos %}
+        <tr>
+            <td>
+                <a href="{{curso.link}}">{{ curso.nome }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
