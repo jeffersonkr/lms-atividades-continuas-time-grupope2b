@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% block conteudo%}
+<div class="container"></div>
+
+{% if disciplina.id %}
+<h2>Alterando Disciplina</h2>
+{% else %}
+<h2>Nova Disciplina</h2>
+{% endif %}
+
+<form method="POST" action="">
+
+    <p>Nome: <input type="text" name="nome" value="{{ disciplina.nome }}"></p>
+    <p>Nome curso: <input type="text" name="nomecurso" value="{{ disciplina.nomecurso }}"></p>
+    <p>
+        Curso: <select name="curso">
+            <option value="">-- selecione --</option>
+
+            {% for curso in cursos %}
+            <option {% if curso.id == disciplina.curso.id %} selected {% endif %} value="{{curso.id }}">{{ curso.nome }}</option>
+            {% endfor %}
+
+        </select>
+    
+    </p>
+
+    <button type="submit">Enviar</button>
+</form>
+
+</table>
+</div>
+{% endblock %}
