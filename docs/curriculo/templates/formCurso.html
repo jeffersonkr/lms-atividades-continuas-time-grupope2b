@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block conteudo%}
+<div class="container"></div>
+
+{% if curso.id %}
+<h2>Alterando curso</h2>
+{% else %}
+<h2>Novo Curso</h2>
+{% endif %}
+
+<form method="POST" action="">
+
+    <p>Nome: <input type="text" name="nome" value="{{ curso.nome }}"></p>
+    <p>Sigla: <input type="text" name="sigla" value="{{ curso.sigla }}"></p>
+    <button type="submit">Enviar</button>
+</form>
+
+</table>
+</div>
+{% endblock %}
