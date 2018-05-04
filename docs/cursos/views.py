@@ -1,17 +1,19 @@
 from django.shortcuts import render, redirect
-from curriculo.models import Cursos
+from core.models.cursos import Curso
+from django.http import HttpResponse
 
 def listaCursos(request):
     contexto={
-        'cursos':Cursos.objects.all()
+        'curso': Curso.objects.all()
     }
     return render(request, 'lista_cursos.html', contexto)
+    #return HttpResponse('Teste')
 
 def incluirCurso(request):
     contexto ={}
 
     if request.POST:
-        Cursos.objects.create(
+        Curso.objects.create(
             nome = request.POST.get('nome'),
             sigla = request.POST.get('sigla'),
         )
@@ -25,13 +27,13 @@ def alterarCurso(request, id):
     contexto ={}
 
     if request.POST:
-        curso = Cursos.objects.get(id=id)
+        curso = Curso.objects.get(id=id)
         
         curso.nome = request.POST.get('nome')
         curso.sigla = request.POST.get('sigla')
         
         curso.save()
 
-    return redirect('/cursos/novoCurso/')
+    return redirect('/curso/novoCurso/')
 
 

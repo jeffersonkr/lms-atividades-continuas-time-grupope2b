@@ -1,0 +1,6 @@
+{
+  "docs/testes/test_descontoNota.py": true,
+  "docs/testes/test_geraRA.py": true,
+  "docs/testes/test_mediaNotas.py": true,
+  "docs/testes/test_mediafinal.py": true
+}

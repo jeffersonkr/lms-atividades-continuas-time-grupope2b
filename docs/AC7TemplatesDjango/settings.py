@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+import django_pyodbc
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -77,13 +77,20 @@ WSGI_APPLICATION = 'AC7TemplatesDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'ProjetoLMS',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': '',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 11 for SQL Server',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -122,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/docs/core/static/'

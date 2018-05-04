@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from curriculo.models import Cursos, Disciplina
+from core.models.cursos import Curso
+from core.models.disciplinas import Disciplina
 
 
 def listarDisciplinas(request):
