@@ -10,5 +10,6 @@ class Coordenador(models.Model):
     dtexpiracao = models.DateField(db_column='DtExpiracao', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Coordenador'
+        app_label = 'disciplinas'

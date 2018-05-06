@@ -12,5 +12,6 @@ class Atividadevinculada(models.Model):
     dtfimresposta = models.DateField(db_column='DtfimResposta')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'AtividadeVinculada'
+        app_label = 'disciplinas'

@@ -14,5 +14,6 @@ class Mensagem(models.Model):
     resposta = models.CharField(db_column='Resposta', max_length=500, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Mensagem'
+        app_label = 'disciplinas'

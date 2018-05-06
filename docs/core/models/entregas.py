@@ -16,5 +16,7 @@ class Entrega(models.Model):
     obs = models.CharField(db_column='Obs', max_length=30, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Entrega'
+        
+        app_label = 'disciplinas'

@@ -11,5 +11,6 @@ class Atividade(models.Model):
     idprofessor = models.ForeignKey('Professor', models.DO_NOTHING, db_column='IdProfessor')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Atividade'
+        app_label = 'disciplinas'

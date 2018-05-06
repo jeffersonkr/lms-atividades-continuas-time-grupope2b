@@ -18,5 +18,6 @@ class Disciplina(models.Model):
     idcoordenador = models.ForeignKey(Coordenador, models.DO_NOTHING, db_column='IdCoordenador')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Disciplina'
+        app_label = 'disciplinas'

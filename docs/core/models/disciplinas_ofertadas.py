@@ -2,8 +2,8 @@ from django.db import models
 from .disciplinas import Disciplina
 from .cursos import Curso
 
-class Disciplinaofertada(models.Model):
-    id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
+class DisciplinaOfertada(models.Model):
+    #id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     idcoordenador = models.IntegerField(db_column='IdCoordenador')  # Field name made lowercase.
     dtiniciomatricula = models.DateField(db_column='DtinicioMatricula', blank=True, null=True)  # Field name made lowercase.
     dtfimmatricula = models.DateField(db_column='DtFimMatricula', blank=True, null=True)  # Field name made lowercase.
@@ -19,5 +19,6 @@ class Disciplinaofertada(models.Model):
     planodeaulas = models.CharField(db_column='PlanoDeAulas', max_length=100, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'DisciplinaOfertada'
+        app_label = 'disciplinas'

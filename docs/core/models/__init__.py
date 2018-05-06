@@ -5,8 +5,8 @@ from .atividadevinculadas import Atividadevinculada
 from .coordenadores import Coordenador 
 from .cursos import Curso
 from .disciplinas import Disciplina
-from .disciplinas_nao_ofertadas import Disciplinaofertada
+from .disciplinas_ofertadas import DisciplinaOfertada
 from .entregas import Entrega
 from .mensagens import Mensagem
 from .professores import Professor
-from .solicitacao_matriculas import Solicitacaomatricula
+from .solicitacao_matriculas import SolicitacaoMatricula
