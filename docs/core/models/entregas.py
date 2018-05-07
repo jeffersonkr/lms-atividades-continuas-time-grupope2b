@@ -32,3 +32,12 @@ class Entrega(models.Model):
             if atividadeNota != None:
                 alunos += atividadeNota.idaluno
         return alunos
+
+    def alunosSemNota(self):
+        alunos=[]
+        from atividadevinculadas import Atividadevinculada
+        atividades = Atividadevinculada.objects.filter(idatividadevinculada=self.id)
+        for atividadeNota in atividades:
+            if atividadeNota is None:
+                alunos += atividadeNota.idaluno
+        return alunos
