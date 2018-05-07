@@ -10,19 +10,27 @@
 
 <form method="POST" action="">
 
-    <p>Nome: <input type="text" name="nome" value="{{ disciplina.nome }}"></p>
-    <p>Nome curso: <input type="text" name="nomecurso" value="{{ disciplina.nomecurso }}"></p>
-    <p>
-        Curso: <select name="curso">
-            <option value="">-- selecione --</option>
-
-            {% for curso in cursos %}
-            <option {% if curso.id == disciplina.curso.id %} selected {% endif %} value="{{curso.id }}">{{ curso.nome }}</option>
+    <p><Label name='nome'>Nome da Disciplina: </Label><input type="text" name="nome" value="{{ disciplina.nome }}"></p>
+    <p><label name='data'>Data :</label> <input type="date" name="data" value="{{ disciplina.data }}"></p>
+    <p><label name='planodeensino'>Plano de ensino: </label><textarea name='planodeensino' row='20' column='40' maxlength='300' value="{{ disciplina.planodeensino }}"></textarea></p>
+    <p><label name='cargahoraria'>Carga Horaria: </label><input type='number' name='cargahoraria' value="{{ disciplina.cargahoraria }}"/></p>
+    <p><label name='habilidades'>Habilidades: </label><input type='text' name='habilidades' value='{{ disciplina.habilidades }}'/></p>
+    <p><label name='ementa'>Ementa :</label><textarea name='ementa' row='10' column='20' values="{{ disciplina.ementa }}"/></textarea></p>
+    <p><label name='conteudoprogramatico'>Conteudo Programático: </label><textarea name='conteudoprogramatico' row=10 column=20 values='{{ disciplina.conteudoprogramatico }}'></textarea></p>
+    <p><label name='bibliografiabasica'>Bibliografia Basica: </label><input type='text' name='bibliografiabasica' values="{{ disciplina.bibliografiabasica }}"/></p>
+    <p><label name='bibliografiacomplementar'>Bibliografia complementar:</label><input type='text' name='bibliografiacomplementar' values="{{ disciplina.bibliografiacomplementar }}"</p>
+    <p><label name='percentualpratico'>Percentual pratico: </label><input type="number" name='percentualpratico' values='{{ disciplina.percentualpratico }}'></p>
+    <p><label name='percentualteorico'>Percentual teórico: </label><input type="number" name='percentualteorico' values='{{ disciplina.percentualteorico }}'></p>
+    <p><label name='idcoordenador'>Coordenador: </label>
+        <select name='idcoordenador'>
+            <option>-----Selecione-----</option>
+            {% for a in coordenadores %}
+                <option values= {{ a.id }}> {{ a.name }} </option>
             {% endfor %}
 
         </select>
-    
     </p>
+
 
     <button type="submit">Enviar</button>
 </form>

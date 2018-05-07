@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from core.models.cursos import Curso
 from core.models.disciplinas import Disciplina
-
+from core.models.coordenadores import Coordenador
 
 def listarDisciplinas(request):
     contexto={
@@ -9,24 +9,32 @@ def listarDisciplinas(request):
     }
     return render(request, 'lista_disciplinas.html', contexto)
 
-
 def incluirDisciplinas(request):
     contexto ={
-        'cursos': Cursos.objects.all()
+        'coordenadores': Coordenador.objects.all()
     }
 
     if request.POST:
-        curso = Cursos.objects.get(id=request.POST.get('curso'))
         Disciplina.objects.create(
             nome = request.POST.get('nome'),
-            nomecurso = request.POST.get('nomecurso'),
-            curso = curso
+            data = request.POST.get('data'),
+            planodeensino = request.POST.get('planodeensino'),
+            cargahoraria = request.POST.get('çargahoraria'),
+            habilidades = request.POST.get('habilidades'),
+            ementa = request.POST.get('ementa'),
+            conteudoprogramatico = request.POST.get('conteudoprogramatico'),
+            bibliografiabasica = request.POST.get('bibliografiabasica'),
+            bibliografiacomplementar = request.POST.get('bibliografiacomplementar'),
+            percentualpratico = request.POST.get('percentualpratico'),
+            percentualteorico = request.POST.get('percentualteorico'),
+            idcoordenador = request.POST.get('idcoordenador'),
         )
 
-        return redirect('/disciplinas/')
+        return redirect('/disciplinas/novaDisciplina')
     else:
         return render(request, 'formDisciplina.html', contexto)
 
+        
 def alterarDisciplinas(request, id):
     contexto ={
         'cursos': Cursos.objects.all()

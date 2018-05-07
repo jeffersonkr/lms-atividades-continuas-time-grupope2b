@@ -26,8 +26,8 @@ class Entrega(models.Model):
 
     def alunosComNota(self):
         alunos=[]
-        from atividadevinculadas import Atividadevinculada
-        atividades = Atividadevinculada.objects.filter(idatividadevinculada=self.id)
+        from .atividadevinculadas import Atividadevinculada
+        atividades = Atividadevinculada.objects.get(id=self.idatividadevinculada)
         for atividadeNota in atividades:
             if atividadeNota != None:
                 alunos += atividadeNota.idaluno
@@ -35,9 +35,9 @@ class Entrega(models.Model):
 
     def alunosSemNota(self):
         alunos=[]
-        from atividadevinculadas import Atividadevinculada
-        atividades = Atividadevinculada.objects.filter(idatividadevinculada=self.id)
+        atividades = Atividadevinculada.objects.filter(id=self.idatividadevinculada)
         for atividadeNota in atividades:
             if atividadeNota is None:
                 alunos += atividadeNota.idaluno
         return alunos
+    

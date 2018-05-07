@@ -36,3 +36,5 @@ class Atividadevinculada(models.Model):
                 atividadesAberto.append(atividade)
 
         return atividadesEncerrada
+
+    

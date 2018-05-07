@@ -2,9 +2,10 @@ from django.db import models
 
 class Curso(models.Model):
     #id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
-    nome = models.CharField(unique=True, max_length=20, blank=True, null=True)
+    nome = models.CharField(unique=True, max_length=50)
+    sigla = models.CharField(max_length=5)
     
     class Meta:
-        managed = True
+        managed = False
         db_table = 'Curso'
-        app_label = 'disciplinas'
+        app_label = 'cursos'

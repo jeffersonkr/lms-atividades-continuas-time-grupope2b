@@ -1,14 +1,15 @@
 {% extends 'base.html' %} 
+{% load static %}
 {% block conteudo %}
 <div class="container"></div>
 
 
 
-<h2>Novo Curso</h2>
+<h2>Cursos</h2>
 
 
-<a href="/cursos/incluir">Incluir novo Curso</a>
-<table border="1" width="100%">
+<a href="/cursos/incluir"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
+<table>
     <tr>
         <th>Ações</th>
         <th>Nome</th>
@@ -16,16 +17,13 @@
     </tr>
 
 {% for curso in cursos %}
-
     <tr>
         <td>
-            <a href="/cursos/alterar/{{ curso.id }}">Alterar</a><br>
-            <a href="">Remover</a>
+            <a href="/cursos/alterar/{{ curso.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
+            <a href=""><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
         </td>
         <td>{{ curso.nome }}</td>
-        <td>{{ curso.sigla}}</td>
-
-
+        <td>{{ curso.sigla }}</td>
     </tr>
 {% endfor %}
 

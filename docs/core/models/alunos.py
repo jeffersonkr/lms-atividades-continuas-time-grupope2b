@@ -23,3 +23,4 @@ class Aluno(Pessoa):
 
         return soma_carga
     
+    

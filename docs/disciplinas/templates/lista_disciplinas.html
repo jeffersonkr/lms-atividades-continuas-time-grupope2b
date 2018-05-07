@@ -1,31 +1,32 @@
 {% extends 'base.html' %} 
+{% load static %}
 {% block conteudo %}
+
 <div class="container"></div>
 
 
 
-<h2>Novo Curso</h2>
+<h2>DISCIPLINAS</h2>
 
 
-<a href="/disciplinas/incluir/">Incluir nova disciplina</a>
-<table border="1" width="100%">
+<a href="/disciplinas/incluir"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
+<table>
     <tr>
         <th>Ações</th>
         <th>Nome</th>
-        <th>Nome Curso</th>
-        <th>Curso</th>
+        <th>Carga Horaria</th>
+        <th>Plano de ensino</th>
     </tr>
 
 {% for disciplina in disciplinas %}
-
     <tr>
         <td>
-            <a href="/disciplinas/alterar/{{ disciplina.id }}">Alterar</a><br>
-            <a href="">Remover</a>
+            <a href="/disciplinas/alterar/{{ disciplina.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
+            <a href=""><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
         </td>
         <td>{{ disciplina.nome }}</td>
-        <td>{{ disciplina.nomecurso }}</td>
-        <td>{{ disciplina.curso}}</td>
+        <td>{{ disciplina.cargahoraria }}</td>
+        <td>{{ disciplina.planodeensino }}</td>
 
 
     </tr>
