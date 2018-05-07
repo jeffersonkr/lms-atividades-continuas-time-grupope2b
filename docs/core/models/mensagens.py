@@ -17,3 +17,8 @@ class Mensagem(models.Model):
         managed = True
         db_table = 'Mensagem'
         app_label = 'disciplinas'
+
+    def __str__(self):
+        return self.assunto
+
+    

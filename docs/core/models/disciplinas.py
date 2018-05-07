@@ -21,3 +21,8 @@ class Disciplina(models.Model):
         managed = True
         db_table = 'Disciplina'
         app_label = 'disciplinas'
+
+    def __str__(self):
+        return self.nome
+    
+    

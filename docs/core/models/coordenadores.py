@@ -1,7 +1,7 @@
 from django.db import models
 
 class Coordenador(models.Model):
-    id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
+    #id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     idlogin = models.CharField(unique=True, max_length=30)
     senha = models.CharField(max_length=15)
     nome = models.CharField(db_column='Nome', max_length=30)  # Field name made lowercase.

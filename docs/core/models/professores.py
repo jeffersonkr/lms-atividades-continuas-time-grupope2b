@@ -13,4 +13,10 @@ class Professor(Pessoa):
 
     def retornaCargaHoraria(self):
         soma_carga = 0
+        from .disciplinas_ofertadas import DisciplinaOfertada
+        disciplina = DisciplinaOfertada.objects.filter(idprofessor=self.id)
+        for a in disciplina:
+            b =  a.iddisciplina.cargahoraria
+            soma_carga += b
         
+        return soma_carga

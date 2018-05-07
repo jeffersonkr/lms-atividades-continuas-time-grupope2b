@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Atividade(models.Model):
-    id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
+    #id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     titulo = models.CharField(db_column='Titulo', unique=True, max_length=10)  # Field name made lowercase.
     descricao = models.CharField(db_column='Descricao', max_length=30, blank=True, null=True)  # Field name made lowercase.
     conteudo = models.CharField(db_column='Conteudo', max_length=50)  # Field name made lowercase.
@@ -14,3 +14,6 @@ class Atividade(models.Model):
         managed = True
         db_table = 'Atividade'
         app_label = 'disciplinas'
+
+    def __str__(self):
+        return self.titulo

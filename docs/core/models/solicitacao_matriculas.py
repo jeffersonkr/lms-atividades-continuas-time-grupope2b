@@ -9,7 +9,7 @@ class SolicitacaoMatricula(models.Model):
     dtsolicitacao = models.DateTimeField(db_column='DtSolicitacao', blank=True, null=True)  # Field name made lowercase.
     idcoordenador = models.IntegerField(db_column='IdCoordenador', blank=True, null=True)  # Field name made lowercase.
     status = models.CharField(max_length=10, blank=True, null=True)
-
+    
     class Meta:
         managed = True
         db_table = 'SolicitacaoMatricula'

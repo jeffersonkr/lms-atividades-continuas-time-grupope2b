@@ -3,7 +3,7 @@ from .alunos import Aluno
 from .atividadevinculadas import Atividadevinculada
 
 class Entrega(models.Model):
-    id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
+    #id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     idaluno = models.ForeignKey(Aluno, models.DO_NOTHING, db_column='IdAluno')  # Field name made lowercase.
     idatividadevinculada = models.ForeignKey(Atividadevinculada, models.DO_NOTHING, db_column='IdAtividadeVinculada')  # Field name made lowercase.
     titulo = models.CharField(db_column='Titulo', max_length=10)  # Field name made lowercase.
@@ -20,3 +20,15 @@ class Entrega(models.Model):
         db_table = 'Entrega'
         
         app_label = 'disciplinas'
+
+    def __str__(self):
+        return self.titulo
+
+    def alunosComNota(self):
+        alunos=[]
+        from atividadevinculadas import Atividadevinculada
+        atividades = Atividadevinculada.objects.filter(idatividadevinculada=self.id)
+        for atividadeNota in atividades:
+            if atividadeNota != None:
+                alunos += atividadeNota.idaluno
+        return alunos

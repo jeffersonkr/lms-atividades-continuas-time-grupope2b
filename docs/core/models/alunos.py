@@ -22,3 +22,4 @@ class Aluno(Pessoa):
             soma_carga += s.iddisciplinaofer.iddisciplina.cargahoraria
 
         return soma_carga
+    
