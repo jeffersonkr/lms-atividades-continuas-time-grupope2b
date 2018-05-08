@@ -10,7 +10,7 @@ class Aluno(Pessoa):
     class Meta:
         managed = True
         db_table = 'Aluno'
-        app_label = 'disciplinas'
+        app_label = 'alunos'
 
     def retornaCargaHoraria(self):
         soma_carga = 0

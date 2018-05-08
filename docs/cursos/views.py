@@ -32,6 +32,6 @@ def alterarCurso(request, id):
         
         curso.save()
 
-    return redirect('/curso/novoCurso/')
+    return redirect('/cursos/novoCurso/{{ id }}')
 
 
