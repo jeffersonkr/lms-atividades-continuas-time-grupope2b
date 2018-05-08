@@ -6,4 +6,4 @@ PROJETO LMS
 Django - Python - SQL Server
 
 Site hospedado temporariamenteno pythonanywhere
-jeffersonkr.pythonanywhere.com
+http://jeffersonkr.pythonanywhere.com
