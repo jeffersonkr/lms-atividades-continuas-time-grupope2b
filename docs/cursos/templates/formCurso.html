@@ -1,20 +1,21 @@
 {% extends 'base.html' %} 
 {% block conteudo%}
-<div class="container"></div>
+<div class="container">
 
 {% if curso.id %}
 <h2>Alterando curso</h2>
 {% else %}
-<h2>Novo Curso</h2>
+<h2>Cadastrar novo Curso</h2>
 {% endif %}
-
+<hr>
+<div class="container-center">
 <form method="POST" action="">
 
     <p>Nome: <input type="text" name="nome" value="{{ cursos.nome }}"></p>
     <p>Sigla: <input type="text" name="sigla" value="{{ cursos.sigla }}"></p>
-    <button type="submit">Enviar</button>
+    <button class="butao" type="submit">Cadastrar</button>
 </form>
+</div>
 
-</table>
 </div>
 {% endblock %}

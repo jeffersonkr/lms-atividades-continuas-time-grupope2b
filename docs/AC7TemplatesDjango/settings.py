@@ -86,10 +86,6 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 11 for SQL Server',
-        },
     }
 }
 

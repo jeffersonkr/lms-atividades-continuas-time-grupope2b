@@ -1,13 +1,14 @@
 {% extends 'base.html' %} 
 {% block conteudo%}
-<div class="container"></div>
+<div class="container">
 
 {% if disciplina.id %}
 <h2>Alterando Disciplina</h2>
 {% else %}
-<h2>Nova Disciplina</h2>
+<h2>Cadastrar Nova Disciplina</h2>
 {% endif %}
-
+<hr>
+<div class="container-center">
 <form method="POST" action="">
     <table>
         <tr>
@@ -65,12 +66,12 @@
             </td>
         </tr>
         <tr>
-            <p><td><button type="submit">Enviar</button></td></p>
-            <p><td><button type="reset">Limpar</button></td></p>
+            <p><td><button class="butao" type="submit">Enviar</button></td></p>
+            <p><td><button class="butao" type="reset">Limpar</button></td></p>
         </tr>
     </table>
 </form>
+</div>
 
-</table>
 </div>
 {% endblock %}

@@ -1,13 +1,14 @@
 {% extends 'base.html' %} 
 {% load static %}
 {% block conteudo %}
-<div class="container"></div>
+<div class="container">
 
 
 
-<h2>Cursos</h2>
+<h2>Lista dos Cursos</h2>
+<hr>
 
-
+<div class="table-center">
 <a href="/cursos/incluir"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
 <table>
     <tr>
@@ -28,5 +29,6 @@
 {% endfor %}
 
 </table>
+</div>
 </div>
 {% endblock %}
