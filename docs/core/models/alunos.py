@@ -22,5 +22,16 @@ class Aluno(Pessoa):
             soma_carga += s.iddisciplinaofer.iddisciplina.cargahoraria
 
         return soma_carga
-    
+
+        
+    """ verificar funcao
+    def retornaDisciplina(self):
+        disciplnas = []
+        from .solicitacao_matriculas import SolicitacaoMatricula
+        solicitacoes = SolicitacaoMatricula.objects.filter(idaluno=self.id)
+        for s in solicitacoes:
+            disciplinas += s.iddisciplinaofer.iddisciplina
+
+        return disciplinas
+    """
     

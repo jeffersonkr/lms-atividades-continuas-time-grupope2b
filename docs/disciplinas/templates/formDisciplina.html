@@ -60,7 +60,7 @@
             <td><p><select name='idcoordenador'>
                 <option>-----Selecione-----</option>
                 {% for a in coordenadores %}
-                    <option values= {{ a.id }}> {{ a.name }} </option>
+                    <option values="{{ a.id }}"> {{ a.nome }} </option>
                 {% endfor %}
             </select></p>
             </td>

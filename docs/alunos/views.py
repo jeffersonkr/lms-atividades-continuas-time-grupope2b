@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect
 from core.models.alunos import Aluno
-
 # Create your views here.
+
+def indexAlunos(request):
+    contexto = {
+        'alunos': Aluno.objects.all()
+    }
+
+    return render(request, 'indexalunos.html', contexto)
+
 def cadastroAluno(request):
     contexto={}
 

@@ -5,7 +5,6 @@ from core.views import *
 
 urlpatterns = [
     path('', home),
-    path('ListaAprovacao/', formulario),
     path('graduacao/', graduacao),
     path('ads/', ads),
     path('bd/', bd),

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from core.models.cursos import Curso
 from core.models.disciplinas import Disciplina
 from core.models.coordenadores import Coordenador
+from django.forms import Form
 
 def listarDisciplinas(request):
     contexto={

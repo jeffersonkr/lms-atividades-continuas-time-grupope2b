@@ -30,7 +30,6 @@ nav.menu a{
     font-size: 14px;    
 }
 
-
 div.banner h1{
     text-align: center;
     margin-top: -300px;
@@ -105,6 +104,14 @@ section.cursos p{
     width: 100px;
     color: #fff;
     margin-top: 20px;
+    border: none;
+}
+
+.buttonlogin {
+    background-color: rgb(16, 56, 58);
+    padding: 10px;
+    width: 100px;
+    color: #fff;
     border: none;
 }
 
