@@ -6,6 +6,6 @@ class Curso(models.Model):
     sigla = models.CharField(max_length=5)
     
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Curso'
         app_label = 'cursos'

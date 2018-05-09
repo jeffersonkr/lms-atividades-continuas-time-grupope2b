@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'disciplinas',
     'cursos',
     'alunos',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -86,10 +87,6 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 11 for SQL Server',
-        },
     }
 }
 
