@@ -27,13 +27,11 @@ def incluirCurso(request):
 
 def alterarCurso(request, id):
     contexto ={
-        'curso': Curso.objects.get(id=id),
+        'cursos': Curso.objects.get(id=id),
         'title': 'Alterar cursos'
     }
 
     
-
-
     if request.POST:
         curso = Curso.objects.get(id=id)
     
@@ -44,7 +42,7 @@ def alterarCurso(request, id):
 
         return redirect('/cursos/')
     
-    return render(request, 'formCurso.html')
+    return render(request, 'formCurso.html', contexto)
 
 
 def removerCurso(request, id):
