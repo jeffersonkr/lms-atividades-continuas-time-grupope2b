@@ -24,6 +24,7 @@ urlpatterns = [
     path('media/', include('utils.urls')),
     path('disciplinas/', include('disciplinas.urls')),
     path('alunos/', include('alunos.urls')),
-    path('login/', include('login.urls'))
+    path('login/', include('login.urls')),
+    path('professores/', include('professores.urls')),
     
 ]

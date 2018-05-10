@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="container">
+    <h2>Lista Professores</h2>
+    <hr>
+    <div class="table-center">
+    <a href="/professores/cadastrarProfessor/"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
+    <table>
+        <tr class="cab">
+            <th>Nome</th>
+            <th>Apelido</th>
+            <th>Email</th>
+            <th>Celular</th>
+            
+        </tr>
+        {% for profesor in professores %}
+            <tr>
+                <td>{{ profesor.nome }}</td>
+                <td>{{ profesor.apelido }}</td>
+                <td>{{ profesor.email }}</td>
+                <td>{{ profesor.celular }}</td>
+                
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+{% endblock %}

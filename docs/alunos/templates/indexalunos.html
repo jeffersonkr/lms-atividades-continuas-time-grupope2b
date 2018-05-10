@@ -1,14 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 {% block conteudo %}
-<div>
-    <h1>Lista Alunos</h1>
+<div class="container">
+    <h2>Lista Alunos</h2>
+    <hr>
+    <div class="table-center">
+    <a href="/alunos/cadastroaluno"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
     <table>
-        <tr>
-            <td><p>Nome</p></td>
-            <td><p>RA</p></td>
-            <td><p>Email</p></td>
-            <td><p>Celular</p></td>
-            <td><p>Foto</p></td>
+        <tr class="cab">
+            <th>Nome</th>
+            <th>RA</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Foto</th>
         </tr>
         {% for aluno in alunos %}
             <tr>
@@ -20,5 +24,6 @@
             </tr>
         {% endfor %}
     </table>
+</div>
 </div>
 {% endblock %}

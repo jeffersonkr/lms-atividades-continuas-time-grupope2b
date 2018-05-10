@@ -3,14 +3,12 @@
 
 <div class="container">
 
-<h2>Cadastro de aluno</h2>
+<h2>Cadastro de professores</h2>
 <hr>
 
 <div class='container-center'>
-    {% if erro %}
-        <p>{{ erro }}</p>
-    {% endif %}
-    <form name='cadastroaluno' method='POST' action=''>
+
+    <form name='cadastroprofessor' method='POST' action=''>
         <table>
             <tr>
                 <td><p><label name='nome'>Nome: </label></p></td>
@@ -33,21 +31,14 @@
                 <td><p><input type='password' name='senha' value='{{ aluno.senha }}'/></p></td>
             </tr>
             <tr>
-                    <td><p><label name='senha'>Confirmar senha: </label></p></td>
-                    <td><p><input type='password' name='senha2' value='{{ aluno.senha }}'/></p></td>
-                </tr>
-            <tr>
-                <td><p><label name='ra'>RA: </label></p></td>
-                <td><p><input type="number" name='ra' value='{{ aluno.ra }}'/></p></td>
+                <td><p><label name='apelido'>Apelido: </label></p></td>
+                <td><p><input type="text" name='apelido' value='{{ aluno.ra }}'/></p></td>
             </tr>
             <tr>
                 <td><p><label name='dataexpiracao'>Data expiração: </label></p></td>
                 <td><p><input type='date' name='dataexpiracao' value='{{ aluno.dataexpiracao }}'/></p></td>
             </tr>
-            <tr>
-                <td><p><label name='foto'>Foto: </label></td>
-                <td><input type="url" name='foto' value='{{ aluno.foto }}'/></p></td>
-            </tr>
+            
             <tr>
                 <td><p><button class="butao" type='submit'>Cadastrar</button></p></td>
                 <td><p><button class="butao" type='reset'>Limpar</button></p></td>

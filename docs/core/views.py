@@ -1,25 +1,46 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'index.html')
+    contexto ={
+        'title': 'Faculdade Impacta'
+    }
+    return render(request, 'index.html', contexto)
 
 def graduacao(request):
-    return render(request, 'graduacao.html')
+    contexto ={
+        'title': 'Graduação'
+    }
+    return render(request, 'graduacao.html', contexto)
 
 def adm(request):
-    return render(request, 'adm.html')
+    contexto ={
+        'title': 'Sobre curso'
+    }
+    return render(request, 'adm.html', contexto)
 
 def bd(request):
-    return render(request, 'bd.html')
+    contexto ={
+        'title': 'Sobre curso'
+    }
+    return render(request, 'bd.html', contexto)
 
 def jogosdigitais(request):
-    return render(request, 'jogosdigitais.html')
+    contexto ={
+        'title': 'Sobre curso'
+    }
+    return render(request, 'jogosdigitais.html', contexto)
 
 def gti(request):
-    return render(request, 'gti.html')
+    contexto ={
+        'title': 'Sobre curso'
+    }
+    return render(request, 'gti.html', contexto)
 
 def ads(request):
-    return render(request, 'ads.html')
+    contexto ={
+        'title': 'Sobre curso'
+    }
+    return render(request, 'ads.html', contexto)
 
 
 

@@ -2,24 +2,25 @@
 
 {% block conteudo %}
 
-<div class="container">
+    <div class="container">
 
    
-    <h2>Área Login</h2>
- 
-    <hr>
-    <div class="container-center">
-    <form method="POST" action="">
+        <h2>Área Login</h2>
+     
+        <hr>
+        <div class="container-center">
+            {% if erro %}
+            <p>{{ erro }}</p>
+            {% endif %}
+        <form method="POST" action="">
+        
+            <p>E-mail: <input type="email" name="email" placeholder='exemplo@email.com.br' required/></p>
+            <p>senha: <input type="password" name="senha" required></p>
     
-        <p>E-mail: <input type="email" name="email" placeholder='exemplo@email.com.br' required/></p>
-        <p>senha: <input type="password" name="senha" required></p>
-
-        <button class="butao" type="submit">Entrar</button>
-
-    </form>
-    </div>
+            <button class="butao" type="submit">Entrar</button>
     
+        </form>
+        </div>
+        
     </div>
-
-
 {% endblock %}

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Faculdade Impacta</title>
+    <title>{{ title | upper }}</title>
     <meta name="author" content="Adtile">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="{% static 'imagens/favicon.ico' %}" />
@@ -29,16 +29,19 @@
                     <a href="/alunos">Aluno</a>
                 </li>
                 <li>
-                    <a href="/cursos">Lista dos Cursos</a>
+                    <a href="/cursos">Cursos</a>
                 </li>
                 <li>
                     <a href="/disciplinas">Disciplinas</a>
                 </li>
                 <li>
-                    <a href="/login/listaUsuarios/">Usuarios</a>
+                    <a class='buttonlogin' href="/login">Login</a>
                 </li>
                 <li>
-                    <a class='buttonlogin' href="/login">Login</a>
+                    <a href="/login">Ola Usuario</a>
+                </li>
+                <li>
+                    <a href="/login">Sair</a>
                 </li>
 
             </ul>

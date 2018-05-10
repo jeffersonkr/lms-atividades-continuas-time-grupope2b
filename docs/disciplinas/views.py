@@ -6,13 +6,15 @@ from django.forms import Form
 
 def listarDisciplinas(request):
     contexto={
-        'disciplinas':Disciplina.objects.all()
+        'disciplinas':Disciplina.objects.all(),
+        'title': 'Lista de disciplinas'
     }
     return render(request, 'lista_disciplinas.html', contexto)
 
 def incluirDisciplinas(request):
     contexto ={
-        'coordenadores': Coordenador.objects.all()
+        'coordenadores': Coordenador.objects.all(),
+        'title': 'Incluir disciplinas'
     }
 
     if request.POST:
@@ -38,7 +40,8 @@ def incluirDisciplinas(request):
         
 def alterarDisciplinas(request, id):
     contexto ={
-        'cursos': Cursos.objects.all()
+        'cursos': Cursos.objects.all(),
+        'title': 'Alterar disciplinas'
     }
 
     if request.POST:

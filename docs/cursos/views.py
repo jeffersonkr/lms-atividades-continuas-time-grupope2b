@@ -4,12 +4,15 @@ from django.http import HttpResponse
 
 def listaCursos(request):
     contexto={
+        'title': 'Listagem de cursos',
         'cursos': Curso.objects.all()
     }
     return render(request, 'lista_cursos.html', contexto)
 
 def incluirCurso(request):
-    contexto ={}
+    contexto ={
+        'title': 'Incluir cursos'
+    }
 
     if request.POST:
         Curso.objects.create(
@@ -23,15 +26,36 @@ def incluirCurso(request):
 
 
 def alterarCurso(request, id):
-    contexto ={}
+    contexto ={
+        'curso': Curso.objects.get(id=id),
+        'title': 'Alterar cursos'
+    }
+
+    
+
 
     if request.POST:
         curso = Curso.objects.get(id=id)
-        
+    
         curso.nome = request.POST.get('nome')
+        curso.sigla = request.POST.get('sigla')
         
         curso.save()
 
-    return redirect('/cursos/novoCurso/{{ id }}')
+        return redirect('/cursos/')
+    
+    return render(request, 'formCurso.html')
 
 
+def removerCurso(request, id):
+    contexto = {
+        'cursos': Curso.objects.all(),
+        'title': 'Lista de cursos'
+    }
+    if request.POST:
+        a = Curso.objects.filter(id=id).delete()
+        a.save()
+
+        return redirect('/cursos/')
+
+    return render(request, 'lista_cursos.html', contexto)

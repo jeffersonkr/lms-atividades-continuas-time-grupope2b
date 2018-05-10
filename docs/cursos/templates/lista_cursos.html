@@ -21,7 +21,7 @@
     <tr>
         <td>
             <a href="/cursos/alterar/{{ curso.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
-            <a href=""><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
+            <a href="/cursos/remover/{{ curso.id }}"><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
         </td>
         <td>{{ curso.nome }}</td>
         <td>{{ curso.sigla }}</td>
