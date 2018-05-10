@@ -116,7 +116,7 @@ venv.bak/
 .pytest_cache
 
 #pycache
-__pycache__
+**/__pycache__/**
 
 #migrates
 **/migrations/**
