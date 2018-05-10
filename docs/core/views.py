@@ -20,3 +20,7 @@ def gti(request):
 
 def ads(request):
     return render(request, 'ads.html')
+
+
+
+

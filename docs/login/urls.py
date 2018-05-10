@@ -1,11 +1,9 @@
 from django.urls import path
-from login.views import novoUsuario, listaUsuarios, login
+from login.views import *
+from core.views import home
 
 
 urlpatterns = [
-
-    path('', login),
-    path('novoUsuario/', novoUsuario),
-    path('listaUsuarios/', listaUsuarios)
-
+    path('', entrar),
+    path('home/', home)
 ]

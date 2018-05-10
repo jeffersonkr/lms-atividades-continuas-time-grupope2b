@@ -1,0 +1,12 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'ProjetoLMS',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': '',
+        'OPTIONS': {
+             'driver': 'ODBC Driver 11 for SQL Server',
+        }
+    }
+}

@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .backend import autenticar
 
-def listaUsuarios(request):
-    return render(request, 'listaUsuarios.html')
 
-def novoUsuario(request):
-    return render(request, 'formUsuario.html')
-
-def login(request):
-    return render(request, 'login.html')
+def entrar(request):
+    contexto = {}
+    if request.method == 'POST':
+        if autenticar(request):
+            return redirect('/')
+    else:
+        pass
+    
+    return render(request, 'login.html', contexto)
