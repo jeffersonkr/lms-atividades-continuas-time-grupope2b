@@ -30,7 +30,7 @@ def cadastroAluno(request):
                 ra = request.POST.get('ra'),
                 foto = request.POST.get('foto'),
             )
-            return redirect('/alunos/cadastroaluno')
+            return redirect('/alunos/')
         else:
             contexto['erro']='Senhas não conferem!'
 
@@ -48,6 +48,7 @@ def alterarAluno(request, id):
         senha2 = request.POST.get('senha2'),
 
         if senha == senha2:
+            a = Aluno.objects.get(id=id)
             nome = request.POST.get('nome'),
             email = request.POST.get('email'),
             celular = request.POST.get('celular'),
