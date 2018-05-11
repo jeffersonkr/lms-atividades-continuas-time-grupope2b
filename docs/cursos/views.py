@@ -50,10 +50,10 @@ def removerCurso(request, id):
         'cursos': Curso.objects.all(),
         'title': 'Lista de cursos'
     }
-    if request.POST:
+    
+    if request.method == 'GET':
         a = Curso.objects.filter(id=id).delete()
-        a.save()
-
+  
         return redirect('/cursos/')
 
     return render(request, 'lista_cursos.html', contexto)

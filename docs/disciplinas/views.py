@@ -39,23 +39,19 @@ def incluirDisciplinas(request):
 
         
 def alterarDisciplinas(request, id):
-    contexto ={
-        'cursos': Cursos.objects.all(),
-        'title': 'Alterar disciplinas'
+    contexto ={}
+
+def removerDisciplina(request, id):
+    contexto = {
+        'title': 'Disciplinas',
+        'disciplina': Disciplina.objects.get(id=id),
     }
 
-    if request.POST:
-        curso = Cursos.objects.get(id=request.POST.get('curso'))
-        disciplina = Disciplina.objects.get(id=id)
-       
-        disciplina.nome = request.POST.get('nome')
-        disciplina.nomecurso = request.POST.get('nomecurso')
-        disciplina.curso = curso
+    if request.method == 'GET':
+        disciplina = Disciplina.objects.get(id=id).delete()
         
-        disciplina.save()
         return redirect('/disciplinas/')
-    else:
-        contexto ["disciplina"]=Disciplina.objects.get(id=id)
-        return render(request, 'formDisciplina.html', contexto)
+
+    return render(request, 'lista_disciplinas.html', contexto)
 
 

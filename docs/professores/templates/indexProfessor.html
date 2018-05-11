@@ -8,18 +8,21 @@
     <a href="/professores/cadastrarProfessor/"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
     <table>
         <tr class="cab">
+            <th>Ação</th>
             <th>Nome</th>
             <th>Apelido</th>
             <th>Email</th>
             <th>Celular</th>
             
         </tr>
-        {% for profesor in professores %}
+        {% for professor in professores %}
             <tr>
-                <td>{{ profesor.nome }}</td>
-                <td>{{ profesor.apelido }}</td>
-                <td>{{ profesor.email }}</td>
-                <td>{{ profesor.celular }}</td>
+                <td><a href="alterar/{{ professor.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
+                    <a href="remover/{{ professor.id }}"><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a></td>
+                <td>{{ professor.nome }}</td>
+                <td>{{ professor.apelido }}</td>
+                <td>{{ professor.email }}</td>
+                <td>{{ professor.celular }}</td>
                 
             </tr>
         {% endfor %}
