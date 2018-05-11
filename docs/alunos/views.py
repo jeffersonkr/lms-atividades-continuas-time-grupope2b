@@ -67,5 +67,14 @@ def alterarAluno(request, id):
     
     return render(request, 'cadastroaluno.html', contexto)
 
-def removerAluno(request):
-    pass
+def removerAluno(request, id):
+    contexto = {
+        'title': 'Lista de alunos',
+        'alunos': Aluno.objects.all()
+    }
+    if request.method == 'GET':
+        aluno = Aluno.objects.get(id=id).delete()
+
+        return redirect('/alunos/')
+    
+    return render(request, 'indexalunos.html', contexto)
