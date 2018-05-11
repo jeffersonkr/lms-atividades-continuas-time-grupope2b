@@ -7,8 +7,8 @@ def entrar(request):
     if request.method == 'POST':
         if autenticar(request):
             return redirect('/')
-    else:
-        contexto['erro'] = 'Usuario ou senha incorretos!'
+        else:
+            contexto['erro'] = 'Usuario ou senha incorretos!'
     
     return render(request, 'login.html', contexto)
 
