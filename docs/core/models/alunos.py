@@ -23,7 +23,11 @@ class Aluno(Pessoa):
 
         return soma_carga
 
-        
+    
+    def __str__(self):
+        return self.nome
+
+
     """ verificar funcao
     def retornaDisciplina(self):
         disciplnas = []

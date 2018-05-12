@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from core.models.alunos import Aluno
+from core.models.sessaoAluno import SessaoAluno
 # Create your views here.
 
 def indexAlunos(request):
+    
     contexto = {
         'alunos': Aluno.objects.all(),
-        'title': 'Lista de alunos'
+        'title': 'Lista de alunos',
     }
 
     return render(request, 'indexalunos.html', contexto)

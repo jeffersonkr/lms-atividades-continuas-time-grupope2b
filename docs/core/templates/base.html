@@ -34,15 +34,25 @@
                 <li>
                     <a href="/disciplinas">Disciplinas</a>
                 </li>
+
+                {% if request.sessao.usuarioAluno %}
+                <li>
+                    <a href="/login">{{request.sessao.usuarioAluno}}</a>
+                </li>
+                
+                <li>
+                    <a href="/login/sair">Sair</a>
+                </li>
+
+                {% else %}
                 <li>
                     <a class='buttonlogin' href="/login">Login</a>
                 </li>
-                <li>
-                    <a href="/login">Ola Usuario</a>
-                </li>
-                <li>
-                    <a href="/login">Sair</a>
-                </li>
+                {% endif %}
+              
+                
+
+
 
             </ul>
         </nav>

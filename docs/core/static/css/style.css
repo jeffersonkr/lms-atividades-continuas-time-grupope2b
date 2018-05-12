@@ -9,6 +9,7 @@ nav.menu{
     text-align: right;
     width: 100%;
     margin-top: -20px;
+    position: absolute;
 }
 
 nav.menu img{
@@ -119,7 +120,7 @@ section.cursos p{
 }
 
 .container{
-    padding: 0px 10px 10px 10px;
+    padding: 100px 10px 10px 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
