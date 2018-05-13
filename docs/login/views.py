@@ -9,7 +9,7 @@ def entrar(request):
     if request.POST:
         if autenticar(request):
             resposta = redirect('/')
-            resposta.set_cookie('PYSESSAO',request.sessao.id)
+            resposta.set_cookie('PYSESSAO', request.sessao.id)
             return resposta
         else:
             contexto['erro'] = 'Usuario ou senha incorretos!'

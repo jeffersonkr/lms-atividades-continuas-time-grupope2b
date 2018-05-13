@@ -44,7 +44,6 @@ def alterarProfessor(request, id):
     contexto = {
         'title': 'Alterar Professor',
         'professor': Professor.objects.get(id=id)
-
     }
 
     if request.POST:

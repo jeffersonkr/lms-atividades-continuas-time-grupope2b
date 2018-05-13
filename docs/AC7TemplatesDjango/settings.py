@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'cursos',
     'login',
     'utils',
-    'reset_migrations',
     
 ]
 

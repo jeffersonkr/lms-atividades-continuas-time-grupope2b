@@ -47,12 +47,12 @@ def alterarCoordernador(request, id):
         senha2 = request.POST.get('senha2'),
 
         if senha == senha2:
-            a = Professor.objects.get(id=id)
-            a.nome = request.POST.get('nome'),
-            a.email = request.POST.get('email'),
-            a.celular = request.POST.get('celular'),
-            a.dtexpiracao = request.POST.get('dataexpiracao'),
-            a.idlogin = request.POST.get('idlogin'),
+            a = Coordenador.objects.get(id=id)
+            a.nome = request.POST.get('nome')
+            a.email = request.POST.get('email')
+            a.celular = request.POST.get('celular')
+            a.dtexpiracao = request.POST.get('dataexpiracao')
+            a.idlogin = request.POST.get('idlogin')
             a.senha = request.POST.get('senha')
             a.save()
 
