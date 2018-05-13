@@ -12,7 +12,7 @@ class DisciplinaOfertada(models.Model):
     ano = models.IntegerField(db_column='Ano')  # Field name made lowercase.
     semestre = models.IntegerField(db_column='Semestre')  # Field name made lowercase.
     turma = models.CharField(db_column='Turma', max_length=1)  # Field name made lowercase.
-    idprofessor = models.ForeignKey('Professor', models.DO_NOTHING, db_column='IdProfessor', blank=True, null=True)  # Field name made lowercase.
+    idprofessor = models.ForeignKey('professores.Professor', models.DO_NOTHING, db_column='IdProfessor', blank=True, null=True)  # Field name made lowercase.
     metodologia = models.CharField(db_column='Metodologia', max_length=100, blank=True, null=True)  # Field name made lowercase.
     recursos = models.CharField(db_column='Recursos', max_length=100, blank=True, null=True)  # Field name made lowercase.
     criterioavaliacao = models.CharField(db_column='CriterioAvaliacao', max_length=100, blank=True, null=True)  # Field name made lowercase.

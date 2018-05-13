@@ -18,11 +18,13 @@ def incluirDisciplinas(request):
     }
 
     if request.POST:
+
         Disciplina.objects.create(
             nome = request.POST.get('nome'),
             data = request.POST.get('data'),
             planodeensino = request.POST.get('planodeensino'),
-            cargahoraria = request.POST.get('çargahoraria'),
+            status = request.POST.get('status'),
+            cargahoraria = request.POST.get('cargahoraria'),
             habilidades = request.POST.get('habilidades'),
             ementa = request.POST.get('ementa'),
             conteudoprogramatico = request.POST.get('conteudoprogramatico'),
@@ -30,16 +32,42 @@ def incluirDisciplinas(request):
             bibliografiacomplementar = request.POST.get('bibliografiacomplementar'),
             percentualpratico = request.POST.get('percentualpratico'),
             percentualteorico = request.POST.get('percentualteorico'),
-            idcoordenador = request.POST.get('idcoordenador'),
+            idcoordenador = Coordenador.objects.get(id=request.POST.get('idcoordenador'))
         )
 
-        return redirect('/disciplinas/novaDisciplina')
+        return redirect('/disciplinas/')
     else:
         return render(request, 'formDisciplina.html', contexto)
 
         
 def alterarDisciplinas(request, id):
-    contexto ={}
+    contexto ={
+        'disciplina': Disciplina.objects.get(id=id),
+        'title': 'Alterar disciplina',
+        'coordenadores': Coordenador.objects.all(),
+    }
+    
+    if request.POST:
+        a = Disciplina.objects.get(id=id)
+        a.nome = request.POST.get('nome')
+        a.data = request.POST.get('data')
+        a.planodeensino = request.POST.get('planodeensino')
+        a.cargahoraria = request.POST.get('cargahoraria')
+        a.habilidades = request.POST.get('habilidades')
+        a.ementa = request.POST.get('ementa')
+        a.conteudoprogramatico = request.POST.get('conteudoprogramatico')
+        a.bibliografiabasica = request.POST.get('bibliografiabasica')
+        a.bibliografiacomplementar = request.POST.get('bibliografiacomplementar')
+        a.percentualpratico = request.POST.get('percentualpratico')
+        a.percentualteorico = request.POST.get('percentualteorico')
+        a.idcoordenador = Coordenador.objects.get(id=request.POST.get('idcoordenador'))
+
+        a.save()
+
+        return redirect('/disciplinas/')
+
+    return render(request, 'formDisciplina.html', contexto)
+
 
 def removerDisciplina(request, id):
     contexto = {

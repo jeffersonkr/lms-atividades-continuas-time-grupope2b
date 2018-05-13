@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .backend import autenticar
-from core.models.sessaoAluno import SessaoAluno
+from core.models.sessoes import Sessao
 
 def entrar(request):
     contexto = {

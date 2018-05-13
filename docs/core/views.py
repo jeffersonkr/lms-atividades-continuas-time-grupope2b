@@ -8,40 +8,12 @@ def home(request):
 
 def graduacao(request):
     contexto ={
-        'title': 'Graduação'
+        'title': 'Graduação - Sobre o curso'
     }
     return render(request, 'graduacao.html', contexto)
 
-def adm(request):
-    contexto ={
-        'title': 'Sobre curso'
-    }
-    return render(request, 'adm.html', contexto)
+def sobrecurso(request):
 
-def bd(request):
-    contexto ={
-        'title': 'Sobre curso'
-    }
-    return render(request, 'bd.html', contexto)
-
-def jogosdigitais(request):
-    contexto ={
-        'title': 'Sobre curso'
-    }
-    return render(request, 'jogosdigitais.html', contexto)
-
-def gti(request):
-    contexto ={
-        'title': 'Sobre curso'
-    }
-    return render(request, 'gti.html', contexto)
-
-def ads(request):
-    contexto ={
-        'title': 'Sobre curso'
-    }
-    return render(request, 'ads.html', contexto)
-
-
+    return render(request, 'sobrecurso.html')
 
 

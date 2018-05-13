@@ -23,7 +23,7 @@
     <tr>
         <td>
             <a href="/disciplinas/alterar/{{ disciplina.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
-            <a href=""><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
+            <a href="/disciplnas/remover/{{ disciplina.id }}"><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
         </td>
         <td>{{ disciplina.nome }}</td>
         <td>{{ disciplina.cargahoraria }}</td>

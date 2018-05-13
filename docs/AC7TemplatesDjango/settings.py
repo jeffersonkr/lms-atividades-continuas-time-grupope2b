@@ -38,13 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'utils',
+    'professores',
+    'coordenadores',
+    'alunos',
     'disciplinas',
     'cursos',
-    'alunos',
     'login',
-    'coordenadores',
-    'professores',
+    'utils',
+    'reset_migrations',
+    
 ]
 
 MIDDLEWARE = [
@@ -132,7 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/docs/core/static/'
 
-#try:
-    #from .local_settings import *
-#except Error:
-    #pass
+try:
+    from .local_settings import *
+except Error:
+    pass

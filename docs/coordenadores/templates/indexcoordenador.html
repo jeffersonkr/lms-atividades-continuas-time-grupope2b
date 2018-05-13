@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block conteudo %}
+{% load static %}
+
+
+<div class='container'>
+    <h2>Lista de coordenadores</h2>
+    <hr>
+    <div class='table-center'>
+    <table>
+        <a href="/coordenadores/incluir/"><img src="{% static 'imagens/add-file.png' %}" width=25px title='Adicionar' tag='Adicionar'/></a>
+        <thead>
+            <tr>
+                <th>Ações</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Celular</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coordenador in coordenadores %}
+                <tr>
+                    <td>
+                        <a href="/coordenadores/alterar/{{ coordenador.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
+                        <a href="/coordenadores/remover/{{ coordenador.id }}"><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
+                    </td>
+                    <td>{{ coordenador.nome }}</td>
+                    <td>{{ coordenador.email }}</td>
+                    <td>{{ coordenador.celular }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endblock conteudo %}

@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from core.models.cursos import Curso
-from django.http import HttpResponse
 
 def listaCursos(request):
     contexto={

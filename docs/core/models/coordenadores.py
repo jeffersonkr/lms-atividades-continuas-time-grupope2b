@@ -8,4 +8,4 @@ class Coordenador(Pessoa):
     class Meta:
         managed = True
         db_table = 'Coordenador'
-        app_label = 'disciplinas'
+        app_label = 'coordenadores'

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<div class='container'>
+    <h2>Cadastro de coordenador</h2>
+    <hr>
+    <div class='container-center'>
+        <form method='POST'action=''>
+        <table>
+            <tr>
+                <td><label name='nome'>Nome: </label></td>
+                <td><input type='text' name='nome' value='{{ coordenador.nome }}' required/></td>
+            </tr>
+            <tr>
+                <td><label name='email'>Email: </label></td>
+                <td><input type='email' name='email' value='{{ coordenador.email }}' required/></td>
+            </tr>
+            <tr>
+                    <td><label name='celular'>Celular: </label></td>
+                    <td><input type="tel" name='celular' value='{{ coordenador.celular }}' required/></td>
+            </tr>
+            <tr>
+                    <td><label name='dtexpiracao'>Data de expiração: </label></td>
+                    <td><input type="date" name='dtexpiracao' value='{{ coordenador.dtexpiracao }}' required/></td>
+            </tr>
+            <tr>
+                    <td><label name='idlogin'>ID Login: </label></td>
+                    <td><input type='text' name='idlogin' value='{{ coordenador.idlogin }}' required/></td>
+            </tr>
+            <tr>
+                    <td><label name='senha'>Senha: </label></td>
+                    <td><input type='password' name='senha' value='{{ coordenador.senha }}' required/></td>
+            </tr>
+            <tr>
+                    <td><label name='senha2'>Confirme a senha: </label></td>
+                    <td><input type='password' name='senha2' value='{{ coordenador.senha }}' required/></td>
+            </tr>
+            <tr>
+                <td><button class='butao' type='reset'/>Limpar</button></td>
+                <td><button class='butao' type='submit'/>Cadastrar</button></td>
+            </tr>
+        </form>
+        </table>
+    </div>
+</div>
+
+{% endblock conteudo %}

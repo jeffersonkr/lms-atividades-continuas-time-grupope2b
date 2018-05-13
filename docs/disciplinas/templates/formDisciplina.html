@@ -13,19 +13,27 @@
     <table>
         <tr>
             <td><p><Label name='nome'>Nome da Disciplina: </Label></p></td>
-            <td><p><input type="text" name="nome" value="{{ disciplina.nome }}"></p></td>
+            <td><p><input type="text" name="nome" value="{{ disciplina.nome }}" required/></p></td>
         </tr>
         <tr>
             <td><p><label name='data'>Data :</label></p></td>
-            <td><p><input type="date" name="data" value="{{ disciplina.data }}"></p></td>
+            <td><p><input type="date" name="data" value="{{ disciplina.data }}" required/></p></td>
         </tr>
         <tr>
             <td><p><label name='planodeensino'>Plano de ensino: </label></p></td>
-            <td><p><textarea name='planodeensino' row='20' column='40' maxlength='300' value="{{ disciplina.planodeensino }}"></textarea></p></td>
+            <td><p><textarea name='planodeensino' rows=10 cols=25 maxlength='300' required/>{{ disciplina.planodeensino }}</textarea></p></td>
         </tr>
         <tr>
             <td><p><label name='cargahoraria'>Carga Horaria: </label></p></td>
-            <td><p><input type='number' name='cargahoraria' value="{{ disciplina.cargahoraria }}"/></p></td>
+            <td><p><input type='number' name='cargahoraria' value="{{ disciplina.cargahoraria }}" required/></p></td>
+        </tr>
+        <tr>
+                <td><p><label name='status'>Status: </label></p></td>
+                <td><p><select name='status' selected='1'required/>
+                            <option value='Aberta'>Aberta</option>
+                            <option value='Fechada'>Fechada</option>
+                    </select></p>
+                </td>
         </tr>
         <tr>
             <td><p><label name='habilidades'>Habilidades: </label></p></td>
@@ -33,41 +41,41 @@
         </tr>
         <tr>
             <td><p><label name='ementa'>Ementa :</label></p></td>
-            <td><p><textarea name='ementa' row='10' column='20' values="{{ disciplina.ementa }}"/></textarea></p></td>
+            <td><p><textarea name='ementa' rows='10' cols='25' >{{ disciplina.ementa }}</textarea></p></td>
         </tr>
         <tr>
             <td><p><label name='conteudoprogramatico'>Conteudo Programático: </label></p></td>
-            <td><p><textarea name='conteudoprogramatico' row=10 column=20 values='{{ disciplina.conteudoprogramatico }}'></textarea></p></td>
+            <td><p><textarea name='conteudoprogramatico' rows=10 cols=25>{{ disciplina.conteudoprogramatico }}</textarea></p></td>
         </tr>
         <tr>
             <td><p><label name='bibliografiabasica'>Bibliografia Basica: </label></p></td>
-            <td><p><input type='text' name='bibliografiabasica' values="{{ disciplina.bibliografiabasica }}"/></p></td>
+            <td><p><input type='text' name='bibliografiabasica' value="{{ disciplina.bibliografiabasica }}"/></p></td>
         </tr>
         <tr>
             <td><p><label name='bibliografiacomplementar'>Bibliografia complementar:</label></p></td>
-            <td><input type='text' name='bibliografiacomplementar' values="{{ disciplina.bibliografiacomplementar }}" /></p></td>
+            <td><input type='text' name='bibliografiacomplementar' value="{{ disciplina.bibliografiacomplementar }}" /></p></td>
         </tr>
         <tr>
             <td><p><label name='percentualpratico'>Percentual pratico: </label></p></td>
-            <td><input type="number" name='percentualpratico' values='{{ disciplina.percentualpratico }}'></p></td>
+            <td><input type="number" name='percentualpratico' value='{{ disciplina.percentualpratico }}'></p></td>
         </tr>
         <tr>
             <td><p><label name='percentualteorico'>Percentual teórico: </label></p></td>
-            <td><input type="number" name='percentualteorico' values='{{ disciplina.percentualteorico }}'></p></td>
+            <td><input type="number" name='percentualteorico' value='{{ disciplina.percentualteorico }}'></p></td>
         </tr>
         <tr>
-            <td><p><label name='idcoordenador'>Coordenador: </label></p></td>
+            <td><p><label name='idcoordenadore'>Coordenador: </label></p></td>
             <td><p><select name='idcoordenador'>
-                <option>-----Selecione-----</option>
+
                 {% for a in coordenadores %}
-                    <option value= '{{ a.id }}' > {{ a }} </option>
+                    <option value='{{ a.id }}'> {{ a }} </option>
                 {% endfor %}
             </select></p>
             </td>
         </tr>
         <tr>
-            <p><td><button class="butao" type="submit">Enviar</button></td></p>
             <p><td><button class="butao" type="reset">Limpar</button></td></p>
+            <p><td><button class="butao" type="submit">Cadastrar</button></td></p>
         </tr>
     </table>
 </form>

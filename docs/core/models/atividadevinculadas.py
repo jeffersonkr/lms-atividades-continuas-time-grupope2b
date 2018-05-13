@@ -4,7 +4,7 @@ from .atividades import Atividade
 class Atividadevinculada(models.Model):
     #id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     idatividade = models.ForeignKey(Atividade, models.DO_NOTHING, db_column='IdAtividade')  # Field name made lowercase.
-    idprofessor = models.ForeignKey('Professor', models.DO_NOTHING, db_column='IdProfessor')  # Field name made lowercase.
+    idprofessor = models.ForeignKey('professores.Professor', models.DO_NOTHING, db_column='IdProfessor')  # Field name made lowercase.
     iddisciplinaOfertada = models.ForeignKey('DisciplinaOfertada', models.DO_NOTHING, db_column='IdDisciplinaOfertada')  # Field name made lowercase.
     rotulo = models.CharField(db_column='Rotulo', max_length=20)  # Field name made lowercase.
     status = models.CharField(db_column='Status', max_length=20)  # Field name made lowercase.

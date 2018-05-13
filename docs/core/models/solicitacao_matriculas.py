@@ -13,4 +13,4 @@ class SolicitacaoMatricula(models.Model):
     class Meta:
         managed = True
         db_table = 'SolicitacaoMatricula'
-        app_label = 'disciplinas'
+        app_label = 'cursos'
