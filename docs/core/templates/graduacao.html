@@ -3,46 +3,46 @@
 
 <div class="container">
     <h1>Lista dos Cursos</h1>
-    <table class="tabela">
+    <div class=table-center>
+    <table>
         <tr>
             <td class="nomeCurso">Nome do curso</td>
         </tr>
         
         <tr>
             <td>
-                <a href="#adm">Administração de Empresas</a>
+                <a href="/sobrecurso#adm" target=iframe>Administração de Empresas</a>
             </td>
         </tr>
         
         <tr>
             <td>
-                <a href="#ads">Analise e Desenvolvimento de Sistemas</a>
+                <a href="/sobrecurso#ads" target=iframe>Analise e Desenvolvimento de Sistemas</a>
             </td>
         </tr>
         
         <tr>
             <td>
-                <a href="#bd">Banco de Dados</a>
+                <a href="/sobrecurso#bd" target=iframe>Banco de Dados</a>
             </td>
         </tr>
         
         <tr>
             <td>
-                <a href="#gti">Gestão de Tecnologia da Informação</a>
+                <a href="/sobrecurso#gti" target=iframe>Gestão de Tecnologia da Informação</a>
             </td>
         </tr>
         
         <tr>
             <td>
-                <a href="#jogosdigitais">Jogos Digitais</a>
+                <a href="/sobrecurso#jogosdigitais" target=iframe>Jogos Digitais</a>
             </td>
         </tr>
         
     </table>
+    <iframe name='iframe' id="frame-spec" src='/sobrecurso/' scrolling='no'></iframe>
+</div>
+</div>
 
-</div>
-<div>
-    <iframe src='/sobrecurso/'></iframe>
-</div>
 
 {% endblock conteudo %}

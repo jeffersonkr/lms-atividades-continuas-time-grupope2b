@@ -153,3 +153,10 @@ table td{
 div.container h2{
     text-transform: uppercase;
 }
+
+iframe#frame-spec {
+    width: 400px;
+    height: 370px;
+    border: none;
+    overflow: hidden;
+}
