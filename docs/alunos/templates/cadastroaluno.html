@@ -14,27 +14,27 @@
         <table>
             <tr>
                 <td><p><label name='nome'>Nome: </label></p></td>
-                <td><p><input type='text' name='nome' value='{{ aluno.nome }}' /></p></td>
+                <td><p><input type='text' name='nome' value='{{ aluno.nome }}' required/></p></td>
             </tr>
             <tr>
                 <td><p><label name='email'>Email: </label></p></td>
-                <td><p><input type="email" name='email' value='{{ aluno.email }}'/></p></td>
+                <td><p><input type="email" name='email' value='{{ aluno.email }}' required/></p></td>
             </tr>
             <tr>
                 <td><p><label name='celular'>Celular: </label></p></td>
-                <td><p><input type="tel" name='celular' value='{{ aluno.celular }}'/></p></td>
+                <td><p><input type="tel" name='celular' value='{{ aluno.celular }}' required/></p></td>
             </tr>
             <tr>
                 <td><p><label name='idlogin'>ID Login: </label></td>
-                <td><input type='text' name='idlogin' value='{{ aluno.idlogin }}'/></p></td>
+                <td><input type='text' name='idlogin' value='{{ aluno.idlogin }}' required/></p></td>
             </tr>
             <tr>
                 <td><p><label name='senha'>Senha: </label></p></td>
-                <td><p><input type='password' name='senha' value='{{ aluno.senha }}'/></p></td>
+                <td><p><input type='password' name='senha' value='{{ aluno.senha }}' required/></p></td>
             </tr>
             <tr>
                     <td><p><label name='senha'>Confirmar senha: </label></p></td>
-                    <td><p><input type='password' name='senha2' value='{{ aluno.senha }}'/></p></td>
+                    <td><p><input type='password' name='senha2' value='{{ aluno.senha }}' required/></p></td>
                 </tr>
             <tr>
                 <td><p><label name='ra'>RA: </label></p></td>
@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td><p><label name='dataexpiracao'>Data expiração: </label></p></td>
-                <td><p><input type='date' name='dataexpiracao' value='{{ aluno.dataexpiracao }}'/></p></td>
+                <td><p><input type='date' name='dataexpiracao' value='{{ aluno.dataexpiracao }}' required/></p></td>
             </tr>
             <tr>
                 <td><p><label name='foto'>Foto: </label></td>
