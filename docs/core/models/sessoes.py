@@ -8,17 +8,9 @@ from django.core.exceptions import ObjectDoesNotExist
 class Sessao(models.Model):
 
     id = models.UUIDField(primary_key = True, default=uuid.uuid4, editable=False)
-
-    try:
-        usuario = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    except:
-        try:
-            usuario = models.ForeignKey(Professor, on_delete=models.CASCADE)
-        except:
-            try:
-                usuario = models.ForeignKey(Coordenador, on_delete=models.CASCADE)
-            except:
-                pass
+    usuarioaluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    usuarioprofessor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    usuariocoordenador = models.ForeignKey(Coordenador, on_delete=models.CASCADE)
 
 
     class Meta:
