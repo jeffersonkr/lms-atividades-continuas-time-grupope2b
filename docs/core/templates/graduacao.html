@@ -1,47 +1,55 @@
 {% extends "base.html" %}
 {% block conteudo %}
 
-<div class="container">
+
+    
+<div class="container3">
     <h1>Lista dos Cursos</h1>
-    <div class=table-center>
-    <table>
-        <tr>
-            <td class="nomeCurso">Nome do curso</td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="/sobrecurso#adm" target=iframe>Administração de Empresas</a>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="/sobrecurso#ads" target=iframe>Analise e Desenvolvimento de Sistemas</a>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="/sobrecurso#bd" target=iframe>Banco de Dados</a>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="/sobrecurso#gti" target=iframe>Gestão de Tecnologia da Informação</a>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <a href="/sobrecurso#jogosdigitais" target=iframe>Jogos Digitais</a>
-            </td>
-        </tr>
-        
-    </table>
-    <iframe name='iframe' id="frame-spec" src='/sobrecurso/' scrolling='no'></iframe>
-</div>
+    <hr>
+        <div id=esquerda>
+            <table>
+                <tr>
+                    <td class="nomeCurso"><h2>Cursos</h2></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a href="/sobrecurso#adm" target=iframe>Administração de Empresas</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a href="/sobrecurso#ads" target=iframe>Analise e Desenvolvimento de Sistemas</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a href="/sobrecurso#bd" target=iframe>Banco de Dados</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a href="/sobrecurso#gti" target=iframe>Gestão de Tecnologia da Informação</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <a href="/sobrecurso#jogosdigitais" target=iframe>Jogos Digitais</a>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+
+        <div id='direita'>
+        <iframe name='iframe' id="frame-spec" src='/sobrecurso/' scrolling='no'></iframe>
+        </div>
+
+    </div>
 </div>
 
 
