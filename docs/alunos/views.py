@@ -14,12 +14,14 @@ def indexAlunos(request):
     return render(request, 'indexalunos.html', contexto)
 
 def cadastroAluno(request):
+    try:
+        ra = geraNumeroRA(Aluno.objects.latest("id").ra)
+    except:
+        ra = geraNumeroRA(000000)
     contexto={
-        'geradorra': geraNumeroRA(Aluno.objects.latest("id").ra)
+        'geradorra': ra
     }
-
     
-
     if request.POST:
 
         email = request.POST.get('email'),

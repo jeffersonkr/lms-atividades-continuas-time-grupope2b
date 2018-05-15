@@ -13,6 +13,8 @@ def geraNumeroRA(ultimoRA):
         return int(AnoStr[2:]+matricula[2:])+1
     else:
         return int(AnoStr[2:]+'00000')+1
+
+
 def calculaMedia(listaNotas):
     soma = 0
     for notas in listaNotas:
