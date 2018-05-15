@@ -9,7 +9,7 @@ def geraNumeroRA(ultimoRA):
     matricula = str(ultimoRA)
     Ano = datetime.date.today().year
     AnoStr = str(Ano)
-    if matricula[:2] == '18':
+    if matricula[:2] == AnoStr[2:]:
         return int(AnoStr[2:]+matricula[2:])+1
     else:
         return int(AnoStr[2:]+'00000')+1
