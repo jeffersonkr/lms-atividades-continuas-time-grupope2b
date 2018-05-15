@@ -115,10 +115,33 @@ venv.bak/
 #pytest_cache
 .pytest_cache
 
-#pycache
-**/__pycache__/**
+
 
 #migrates
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+
+
+#pycache
+**/__pycache__/**
+docs/core/__pycache__/__init__.cpython-36.pyc
+docs/core/__pycache__/admin.cpython-36.pyc
+docs/core/__pycache__/urls.cpython-36.pyc
+docs/core/__pycache__/views.cpython-36.pyc
+docs/core/models/__pycache__/professores.cpython-36.pyc
+docs/core/models/__pycache__/__init__.cpython-36.pyc
+docs/core/models/__pycache__/alunos.cpython-36.pyc
+docs/core/models/__pycache__/atividades.cpython-36.pyc
+docs/core/models/__pycache__/atividadevinculadas.cpython-36.pyc
+docs/core/models/__pycache__/coordenadores.cpython-36.pyc
+docs/core/models/__pycache__/cursos.cpython-36.pyc
+docs/core/models/__pycache__/disciplinas.cpython-36.pyc
+docs/core/models/__pycache__/entregas.cpython-36.pyc
+docs/core/models/__pycache__/mensagens.cpython-36.pyc
+docs/core/models/__pycache__/solicitacao_matriculas.cpython-36.pyc
+docs/cursos/__pycache__/__init__.cpython-36.pyc
+docs/cursos/__pycache__/admin.cpython-36.pyc
+docs/cursos/__pycache__/models.cpython-36.pyc
+docs/cursos/__pycache__/urls.cpython-36.pyc
+docs/cursos/__pycache__/views.cpython-36.pyc
