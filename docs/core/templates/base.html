@@ -20,47 +20,49 @@
             <img src="{% static 'imagens/logo.png' %}" alt="">
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a class=borda href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/professores">Professor</a>
+                    <a class=borda  href="/professores">Professor</a>
                 </li>
                 <li>
-                    <a href="/alunos">Aluno</a>
+                    <a class=borda  href="/alunos">Aluno</a>
                 </li>
                 <li>
-                        <a href="/coordenadores">Coordenador</a>
+                        <a class=borda  href="/coordenadores">Coordenador</a>
                 </li>
                 <li>
-                    <a href="/cursos">Cursos</a>
+                    <a class=borda  href="/cursos">Cursos</a>
                 </li>
                 <li>
-                    <a href="/disciplinas">Disciplinas</a>
+                    <a class=borda  href="/disciplinas">Disciplinas</a>
                 </li>
                 <!--SESSÃO ALUNO-->
+                <div class=menudireita>
                 {% if request.sessao.usuarioaluno %}
 
-                <li><a href="/login">{{request.sessao.usuarioaluno}}</a></li>
-                <li><a href="/login/sair">Sair</a></li>
+                <li><a href="/alunos/alterar/{{ request.sessao.usuarioaluno.id }}"><span class=login>{{request.sessao.usuarioaluno}}</span></a></li>
+                <li><a href="/login/sair"><span class=logout>Sair</span></a></li>
                 <!-- FIM DA SESSÃO ALUNO-->
 
                 <!--SESSÃO PROFESSOR-->
                 {% elif request.sessao.usuarioprofessor %}
 
-                <li><a href="/login">{{request.sessao.usuarioprofessor}}</a></li>
-                <li><a href="/login/sair">Sair</a></li>
+                <li><a href="/professores/alterar/{{ request.sessao.usuarioprofessor.id }}"><span class=login>{{request.sessao.usuarioprofessor}}</span></a></li>
+                <li><a href="/login/sair"><span class=logout>Sair</span></a></li>
                 <!--FIM DA SESSÃO PROFESSOR-->
 
                 <!--SESSÃO COORDENADOR-->
                 {% elif request.sessao.usuariocoordenador %}
 
-                <li><a href="/login">{{request.sessao.usuariocoordenador}}</a></li>
-                <li><a href="/login/sair">Sair</a></li>
+                <li><a href="/coordenadores/alterar/{{ request.sessao.usuariocoordenador.id }}"><span class=login>{{request.sessao.usuariocoordenador}}</span></a></li>
+                <li><a href="/login/sair"><span class=logout>Sair</span></a></li>
                 <!--FIM DA SESSÃO COORDENADOR-->
 
                 {% else %}
                 <li><a class='buttonlogin' href="/login">Login</a></li>
                 {% endif %}
+            </div>
               
             </ul>
         </nav>
