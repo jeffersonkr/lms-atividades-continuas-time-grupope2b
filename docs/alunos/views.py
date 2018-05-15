@@ -23,8 +23,6 @@ def cadastroAluno(request):
     }
     
     if request.POST:
-
-        email = request.POST.get('email'),
         senha = request.POST.get('senha'),
         senha2 = request.POST.get('senha2'),
 
