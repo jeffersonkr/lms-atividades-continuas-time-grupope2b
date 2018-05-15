@@ -49,8 +49,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'login.middleware.AutorizacaoMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'login.middleware.AutorizacaoMiddleware',
+    'login.middleware.GuardaMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,7 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/docs/core/static/'
 
-try:
-    from .local_settings import *
-except Error:
-    pass
+#try:
+#    from .local_settings import *
+#except Error:
+#    pass

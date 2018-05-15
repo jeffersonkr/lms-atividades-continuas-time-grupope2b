@@ -37,26 +37,31 @@
                 <li>
                     <a href="/disciplinas">Disciplinas</a>
                 </li>
+                <!--SESSÃO ALUNO-->
+                {% if request.sessao.usuarioaluno %}
 
-                {% if request.sessao.usuarioAluno %}
-                <li>
-                    <a href="/login">{{request.sessao.usuarioAluno}}</a>
-                </li>
-                
-                <li>
-                    <a href="/login/sair">Sair</a>
-                </li>
+                <li><a href="/login">{{request.sessao.usuarioaluno}}</a></li>
+                <li><a href="/login/sair">Sair</a></li>
+                <!-- FIM DA SESSÃO ALUNO-->
+
+                <!--SESSÃO PROFESSOR-->
+                {% elif request.sessao.usuarioprofessor %}
+
+                <li><a href="/login">{{request.sessao.usuarioprofessor}}</a></li>
+                <li><a href="/login/sair">Sair</a></li>
+                <!--FIM DA SESSÃO PROFESSOR-->
+
+                <!--SESSÃO COORDENADOR-->
+                {% elif request.sessao.usuariocoordenador %}
+
+                <li><a href="/login">{{request.sessao.usuariocoordenador}}</a></li>
+                <li><a href="/login/sair">Sair</a></li>
+                <!--FIM DA SESSÃO COORDENADOR-->
 
                 {% else %}
-                <li>
-                    <a class='buttonlogin' href="/login">Login</a>
-                </li>
+                <li><a class='buttonlogin' href="/login">Login</a></li>
                 {% endif %}
               
-                
-
-
-
             </ul>
         </nav>
     </header>
