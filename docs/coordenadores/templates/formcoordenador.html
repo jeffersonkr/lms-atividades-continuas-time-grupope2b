@@ -29,15 +29,15 @@
             </tr>
             <tr>
                     <td><label name='senha'>Senha: </label></td>
-                    <td><input type='password' name='senha' value='{{ coordenador.senha }}' required/></td>
+                    <td><input type='password' id='senha' name='senha' value='{{ coordenador.senha }}' required/></td>
             </tr>
             <tr>
                     <td><label name='senha2'>Confirme a senha: </label></td>
-                    <td><input type='password' name='senha2' value='{{ coordenador.senha }}' required/></td>
+                    <td><input type='password' id='senha2' name='senha2' value='{{ coordenador.senha }}' onkeyup='checa()' required/></td>
             </tr>
             <tr>
                 <td><button class='butao' type='reset'/>Limpar</button></td>
-                <td><button class='butao' type='submit'/>Cadastrar</button></td>
+                <td><p id=mensagem></p><p><button type='submit' class='butao' name='cadastrar' />Cadastrar</button></p></td>
             </tr>
         </form>
         </table>

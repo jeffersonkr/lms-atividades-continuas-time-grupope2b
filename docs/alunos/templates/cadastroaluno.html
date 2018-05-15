@@ -30,12 +30,11 @@
             </tr>
             <tr>
                 <td><p><label name='senha'>Senha: </label></p></td>
-                <td><p><input type='password' name='senha' value='{{ aluno.senha }}' required/></p></td>
+                <td><p><input type='password' id='senha' name='senha' value='{{ aluno.senha }}' required/></p></td>
             </tr>
             <tr>
                     <td><p><label name='senha'>Confirmar senha: </label></p></td>
-                    <td><p><input type='password' name='senha2' value='{{ aluno.senha }}' required/></p></td>
-                </tr>
+                    <td><p><input type='password' id='senha2' name='senha2' value='{{ aluno.senha }}' onkeyup=checa() required/></p>
             <tr>
                 <td><p><label name='ra'>RA: </label></p></td>
                 <td><p><input type="number" name='ra' value='{{ geradorra }}' readonly/></p></td>
@@ -50,10 +49,11 @@
             </tr>
             <tr>
                 <td><p><button class="butao" type='reset'>Limpar</button></p></td>
-                <td><p><button class="butao" type='submit'>Cadastrar</button></p></td>
+                <td><p id=mensagem></p><p><button type='submit' class="butao" name=cadastrar >Cadastrar</button></p></td>
             </tr>
         </table>
     </form>
 </div>
 </div>
-{% endblock%}
+{% endblock %}
+

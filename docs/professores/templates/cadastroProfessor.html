@@ -7,7 +7,9 @@
 <hr>
 
 <div class='container-center'>
-
+    {% if erro %}
+        <p>{{ erro }}</p>
+    {% endif %}
     <form name='cadastroprofessor' method='POST' action=''>
         <table>
             <tr>
@@ -28,11 +30,15 @@
             </tr>
             <tr>
                 <td><p><label name='senha'>Senha: </label></p></td>
-                <td><p><input type='password' name='senha' value='{{ professor.senha }}'/></p></td>
+                <td><p><input type='password' id='senha' name='senha' value='{{ professor.senha }}'/></p></td>
+            </tr>
+            <tr>
+                <td><p><label name='senha2'>Confirmar senha: </label></p></td>
+                <td><p><input type='password' id='senha2' name='senha2' value='{{ professor.senha }}' onkeyup='checa()'/></p></td>
             </tr>
             <tr>
                 <td><p><label name='apelido'>Apelido: </label></p></td>
-                <td><p><input type="text" name='apelido' value='{{ professor.ra }}'/></p></td>
+                <td><p><input type="text" name='apelido' value='{{ professor.apelido }}'/></p></td>
             </tr>
             <tr>
                 <td><p><label name='dataexpiracao'>Data expiração: </label></p></td>
@@ -41,7 +47,7 @@
             
             <tr>
                 <td><p><button class="butao" type='reset'>Limpar</button></p></td>
-                <td><p><button class="butao" type='submit'>Cadastrar</button></p></td>
+                <td><p id=mensagem></p><p><button type='submit' name='cadastrar' class="butao" >Cadastrar</button></p></td>
             </tr>
         </table>
     </form>
