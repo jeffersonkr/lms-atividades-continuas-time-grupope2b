@@ -10,4 +10,6 @@ from .entregas import Entrega
 from .mensagens import Mensagem
 from .professores import Professor
 from .solicitacao_matriculas import SolicitacaoMatricula
-from .sessoes import Sessao
+from .sessaoAluno import SessaoAluno
+from .sessaoProfessor import SessaoProfessor
+from .sessaoCoordenador import SessaoCoordenador
