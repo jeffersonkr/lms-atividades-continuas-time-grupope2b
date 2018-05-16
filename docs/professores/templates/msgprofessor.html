@@ -1,55 +1,44 @@
-{% extends "areadoaluno.html" %}
-{% block subconteudo %}
+{% extends "areadoprofessor.html" %}
+{% block subconteudoprof %}
 <div class=containerform>
     
-    {% if mensagens == '' %}
+    {% if qtdmensagens == 0 or mensagens == '' %}
         <p>Você não possui mensagens recebidas.</p>
     {% else %}
         <p>Você possui mensagens recebidas.</p>
     {% endif %}
-    <h1>Enviar mensagem:</h1>
-    <form method=POST action=''>
-        <div id=form>
-        <label>De: </label><input type='text' name='idprofessor' value='{{ professor }}' readonly/>
-        </div>
-        <div id=form>
-        <label>Assunto: </label><input type='text' name='assunto' maxlength="20" required/>
-        </div>
-        <div id=form>
-        <label>Referencia: </label><input type='text' name='referencia' maxlength="20" required/>
-        </div>
-        <div id=form>
-        <label>Data de envio: </label><input type='date' name='dtenvio' required/>
-        </div>
-        <div id=form>
-        <label>Aluno:</label>
-        <select name='idAluno'>
-            {% for a in alunos %}
-                <option value='{{ a.id }}'>{{ a }}</option>
-            {% endfor %}
-        </select></div>
-        <div id=formtextarea>
-        <label>Conteudo:</label>
-        <textarea name='conteudo' rows=15 cols=33 maxlength="500"></textarea>
-        </div>
-        <div id=formbutton>
-        <button type=submit>Enviar</button>
-        </div>
-    </form>
 
-    <div>
-        <fieldset>
-            <legend>Mensagem recebida:</legend>
+    <h1 id=prof>Mensagem:</h1>
+    <div id=formfield>
+    <form action='' method='POST'>
             {% for a in mensagens %}
-                <fieldset><legend>{{ a.assunto }}</legend>
-                    <label>{{ a.dtresposta }}</label>
-                    <label>{{ a.referencia }}</label>
-                    <label>{{ a.status }}</label>
-                    <label>{{ a.resposta }}</label>
-                    <label>{{ a.idAluno }}</label>
+                <fieldset>
+                    <legend>Assunto: {{ a.assunto }}</legend>
+                    <input id='idmsg' name='idmsg' type:'number' value='{{ a.id }}' />
+                    <div id='espaco'>
+                    <label id=data>Data recebida: {{ a.dtenvio }}</label>
+                    </div><br/>
+                    <div id='espaco'>
+                    <label>Referencia: {{ a.referencia }}</label>
+                    </div><br/>
+                    <label id='sts'>Status: {{ a.status }}</label>
+                    <div id='espaco'>
+                    <label>Conteudo: <p id=conteudomsg><label id=conteudo>{{ a.conteudo }}</label></p></label>
+                    </div><br/>
+                    <div id='espaco'>
+                    <label>Enviado por: {{ a.idaluno }}</label>
+                    </div><br/>
+                    <div id=espaco>
+                        <label>Responder: </label><label id=dt>Data: <input type=date name='dtresposta' required/></label><p>
+                        <textarea name='resposta' cols=70 rows=10 maxlength=500 required></textarea>
+                        </p>
+                    </div>
+                    <div id=espaco>
+                        <button type='submit'>Enviar</button>
+                    </div>
                 </fieldset>
             {% endfor %}
-        </fieldset>
+    </form>
     </div>
-</div>
-{% endblock subconteudo %}
+</div>    
+{% endblock subconteudoprof %}

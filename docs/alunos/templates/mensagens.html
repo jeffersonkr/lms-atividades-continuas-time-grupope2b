@@ -2,7 +2,7 @@
 {% block subconteudo %}
 <div class=containerform>
     
-    {% if mensagens == '' %}
+    {% if qtdmensagens == 0 or mensagens == '' %}
         <p>Você não possui mensagens recebidas.</p>
     {% else %}
         <p>Você possui mensagens recebidas.</p>
@@ -14,6 +14,12 @@
         </div>
         <div id=form>
         <label>Assunto: </label><input type='text' name='assunto' maxlength="20" required/>
+        </div>
+        <div id=form>
+        <label>Status: </label>
+        <select name='status'>
+            <option value='Enviado'>Enviar</option>
+        </select>
         </div>
         <div id=form>
         <label>Referencia: </label><input type='text' name='referencia' maxlength="20" required/>

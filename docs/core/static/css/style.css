@@ -420,6 +420,17 @@ div.containerform h1{
     font-size: 20px;
 }
 
+div.containerform h1#prof {
+    background-color:rgba(226, 226, 226, 0.425);
+    height: 50px;
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:20px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
 div.containerform p{
     font-size:8pt;
     text-indent: 5px;
@@ -447,6 +458,8 @@ div#form select{
     position: absolute;
     right: 40px;
 }
+
+
 
 div#formtextarea {
     background-color:rgba(226, 226, 226, 0.425);
@@ -481,4 +494,62 @@ div#formbutton button{
 
 div#formbutton button:hover {
     background-color:rgba(160, 139, 255, 0.685);
+}
+
+div#formfield {
+    background-color:rgba(226, 226, 226, 0.425);
+    height: 100%;
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+div#formfield fieldset {
+    margin:5px auto;
+    padding: 20px;
+}
+
+div#formfield legend {
+    font-weight: bold;
+    font-size: 12pt;
+    color:rgb(44, 44, 63)
+}
+
+div#espaco label{
+    padding:5px;
+    font-size: 10pt;
+}
+
+div#espaco label#data {
+    padding:5px;
+    font-size: 8pt;
+}
+
+div#espaco button {
+    float:right;
+}
+
+label#sts {
+    position: absolute;
+    right:30px;
+    font-size:10pt
+}
+
+label#dt {
+    margin-top:15px;
+    float:right;
+}
+
+p#conteudomsg {
+    color: rgb(70, 70, 88);
+}
+
+div#espaco textarea {
+    resize:none;
+}
+
+input#idmsg {
+    display:none;
 }

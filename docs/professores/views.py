@@ -88,31 +88,34 @@ def areaDoProfessor(request):
 def mensagemProfessor(request):
    
     try:
-        mensagens = Mensagem.objects.filter(idProfessor=request.sessao.usuarioprofessor.id)
-        a = mensagens.objects.filter(status='Respondida')
+        mensagens = Mensagem.objects.filter(idprofessor=request.sessao.usuarioprofessor.id).filter(status='Enviada')
+        a = Mensagem.objects.filter(idprofessor=request.sessao.usuarioprofessor.id).filter(status='Enviada').count()
+
     except:
         mensagens = ''
 
     contexto = {
-        'alunos': Aluno.objects.all(),
         'professor': request.sessao.usuarioprofessor.nome,
-        'mensagens': a,
+        'mensagens': mensagens,
+        'qtdmensagens': a,
     }
-
+    
     if request.POST:
-        Mensagem.objects.create(
-            idprofessor = Aluno.objects.get(id=request.sessao.usuarioprofessor.id),
-            assunto = request.POST.get('assunto'),
-            referencia = request.POST.get('referencia'),
-            dtenvio = request.POST.get('dtenvio'),
-            idaluno = Professor.objects.get(id=request.POST.get('idaluno')),
-            conteudo = request.POST.get('conteudo'),
-        )
-        
-        return redirect('/professores/principalprofessor/')
+        idmsg = request.POST.get('idmsg')
+        msg = Mensagem.objects.get(id=idmsg)
+        msg.status = 'Respondida'
+        msg.resposta = request.POST.get('resposta')
+        msg.dtresposta = request.POST.get('dtresposta')
+
+        msg.save()
+
+        return redirect('/msgprofessor/')
 
 
     return render(request, 'msgprofessor.html', contexto)
 
 def subPrincioalProf(request):
-    return render(request, 'index2prof.html')
+    contexto = {
+        'professor': request.sessao.usuarioprofessor.nome
+    }
+    return render(request, 'index2prof.html',contexto)
