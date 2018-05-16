@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+
+<div class='containerarea'>
+    <div class=menuesquerda>
+        <ul>
+            <p id=menu>Menu</p>
+
+            <li><p><a id=aprincipal href='principal'>Principal</a></p></li>
+
+            <li><p><a id=anotas href=''>Notas</a></p></li>
+
+            <li><p><a id=amensagens href='mensagens'>Mensagens</a></p></li>
+
+            <li><p><a id=aatividades href=''>Atividades</a></p></li>
+        </ul>
+    </div>
+    <div class=subconteudo>
+        {% block subconteudo %}
+        
+        {% endblock subconteudo %}
+    </div>
+</div>
+{% endblock conteudo %}

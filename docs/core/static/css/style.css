@@ -243,3 +243,174 @@ span.logout {
 span.logout:hover {
     color:blueviolet;
 }
+
+div.containerarea{
+    max-width:1000px;
+    padding-top:120px;
+    padding-bottom: 50px;
+    display: table;
+    margin:0 auto;
+}
+div.menuesquerda {
+    width:250px;
+    padding-top:15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:3px;
+    float: left;
+}
+div.menuesquerda li{
+    list-style:none;
+    margin:50px 0px;
+}
+
+div.menuesquerda p#menu {
+    padding:15px;
+    background-color:rgba(44, 44, 255, 0.733);
+    text-align:center;
+    text-transform:uppercase;
+    color:rgb(0, 0, 0);
+    font-size:15px;
+}
+
+div.menuesquerda a#aprincipal:hover {
+    background-color:rgba(118, 118, 255, 0.438);
+}
+
+div.menuesquerda a#aprincipal{
+    padding:15px 74px;
+    text-align: center;
+    background-color: rgba(209, 209, 209, 0.836);
+    text-decoration: none;
+    color:black;
+}
+div.menuesquerda a#anotas:hover {
+    background-color:rgba(118, 118, 255, 0.438);
+}
+
+div.menuesquerda a#anotas{
+    padding:15px 84px;
+    text-align: center;
+    background-color: rgba(209, 209, 209, 0.836);
+    text-decoration: none;
+    color:black
+}
+
+div.menuesquerda a#anotas:hover {
+    background-color:rgba(118, 118, 255, 0.438);
+}
+
+div.menuesquerda a#anotas{
+    padding:15px 84px;
+    text-align: center;
+    background-color: rgba(209, 209, 209, 0.836);
+    text-decoration: none;
+    color:black
+}
+div.menuesquerda a#amensagens{
+    padding:15px 63px;
+    text-align: center;
+    background-color: rgba(209, 209, 209, 0.836);
+    text-decoration: none;
+    color:black;
+}
+div.menuesquerda a#aatividades{
+    padding:15px 68px;
+    text-align: center;
+    background-color: rgba(209, 209, 209, 0.836);
+    text-decoration: none;
+    color:black;
+}
+
+div.menuesquerda a#amensagens:hover {
+    background-color:rgba(118, 118, 255, 0.438);
+}
+div.menuesquerda a#aatividades:hover {
+    background-color:rgba(118, 118, 255, 0.438);
+}
+
+div.subconteudo {
+    width:600px;
+    position: relative;
+    float:left;
+    padding:10px;
+}
+
+div.containerform{
+    border-left:2px rgba(177, 177, 177, 0.603) solid;
+    margin:0px 10px 5px 10px;
+    padding-left:10px;
+}
+
+div.containerform h1{
+    background-color:rgba(226, 226, 226, 0.425);
+    height: 50px;
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
+div.containerform p{
+    font-size:8pt;
+    text-indent: 5px;
+    color:rgb(255, 131, 131)
+    
+}
+
+div#form {
+    background-color:rgba(226, 226, 226, 0.425);
+    height: 30px;
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+}
+
+
+div#form input{
+    width: 250px;
+    position: absolute;
+    right: 40px;
+}
+
+div#form select{
+    width: 255px;
+    position: absolute;
+    right: 40px;
+}
+
+div#formtextarea {
+    background-color:rgba(226, 226, 226, 0.425);
+    height: 250px;
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+    
+}
+
+div#formtextarea textarea {
+    position: absolute;
+    right: 40px;
+    resize:none;
+}
+
+div#formbutton {
+    background-color:rgba(226, 226, 226, 0.425);
+    height: 50px;
+    width:100%;
+    padding-top:10px;
+    padding-left:10px;
+
+}
+div#formbutton button{
+    position: absolute;
+    right:40px;
+    background-color:rgba(122, 93, 252, 0.685);
+    padding:10px 20px;
+    border-radius: 15%;
+}
+
+div#formbutton button:hover {
+    background-color:rgba(160, 139, 255, 0.685);
+}
