@@ -98,14 +98,15 @@ def areaDoAluno(request):
 
 def mensagensAluno(request):
     try:
-        mensagens = Mensagem.objects.filter(idaluno=request.sessao.usuarioaluno.id).status('Respondida')
+        mensagens = Mensagem.objects.filter(idaluno=request.sessao.usuarioaluno.id)
+        a = mensagens.filter(status='Respondida')
     except:
         mensagens = ''
 
     contexto = {
         'professores': Professor.objects.all(),
         'aluno': request.sessao.usuarioaluno.nome,
-        'mensagens': mensagens,
+        'mensagens': a,
     }
 
     if request.POST:
