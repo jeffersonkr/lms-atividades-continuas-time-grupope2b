@@ -125,6 +125,64 @@ div.login p input{
     border-radius: 20px;
 }
 
+
+header label[for="bt_menu"]{
+    padding: 5px;
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+#bt_menu{
+    display: none;
+}
+@media(max-width: 890px){
+    header{
+        background: #000;
+    }
+    header label[for="bt_menu"]{
+        display: block;
+    }
+    #bt_menu:checked ~ nav.menu{
+      margin-left: 0;  
+    }
+    nav.menu ul li{
+        width: 100%;
+        float: none;
+        padding: 15px 0px 15px 0px;
+    }
+    nav.menu{
+        
+        overflow: hidden;
+        margin-top: 5px;
+        margin-left: -100%;
+        transition: all .5s;
+        text-align: center;
+    }
+
+    nav.menu img{
+        display: none;
+        
+     }
+
+     nav.menu a.borda{
+        padding-bottom:10px;
+         
+    }
+    
+    nav.menu a.borda:hover{
+        border-bottom: 5px white solid;
+        border-color: rgba(84, 17, 209, 0.705);
+    }
+
+
+}
+
 .buttonlogin {
     background-color: rgb(39, 66, 184);
     padding: 10px 20px;
