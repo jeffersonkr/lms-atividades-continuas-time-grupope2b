@@ -7,5 +7,8 @@ urlpatterns = [
     path('cadastrarProfessor/', cadastrarProfessor),
     path('remover/<int:id>', removerProfessor),
     path('alterar/<int:id>', alterarProfessor),
+    path('areadoprofessor/', areaDoProfessor),
+    path('msgprofessor/', mensagemProfessor),
+    path('principalprofessor/', subPrincioalProf)
     
 ]

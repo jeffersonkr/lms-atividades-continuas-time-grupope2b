@@ -7,6 +7,6 @@ urlpatterns = [
     path('alterar/<int:id>', views.alterarAluno),
     path('remover/<int:id>', views.removerAluno),
     path('areadoaluno/', views.areaDoAluno),
-    path('areadoaluno/mensagens/', views.mensagensAluno),
-    path('areadoaluno/principal/', views.subPrincipal),
+    path('mensagens/', views.mensagensAluno),
+    path('principal/', views.subPrincipal),
 ]

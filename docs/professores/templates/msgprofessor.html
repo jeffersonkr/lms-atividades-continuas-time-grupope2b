@@ -1,0 +1,55 @@
+{% extends "areadoaluno.html" %}
+{% block subconteudo %}
+<div class=containerform>
+    
+    {% if mensagens == '' %}
+        <p>Você não possui mensagens recebidas.</p>
+    {% else %}
+        <p>Você possui mensagens recebidas.</p>
+    {% endif %}
+    <h1>Enviar mensagem:</h1>
+    <form method=POST action=''>
+        <div id=form>
+        <label>De: </label><input type='text' name='idprofessor' value='{{ professor }}' readonly/>
+        </div>
+        <div id=form>
+        <label>Assunto: </label><input type='text' name='assunto' maxlength="20" required/>
+        </div>
+        <div id=form>
+        <label>Referencia: </label><input type='text' name='referencia' maxlength="20" required/>
+        </div>
+        <div id=form>
+        <label>Data de envio: </label><input type='date' name='dtenvio' required/>
+        </div>
+        <div id=form>
+        <label>Aluno:</label>
+        <select name='idAluno'>
+            {% for a in alunos %}
+                <option value='{{ a.id }}'>{{ a }}</option>
+            {% endfor %}
+        </select></div>
+        <div id=formtextarea>
+        <label>Conteudo:</label>
+        <textarea name='conteudo' rows=15 cols=33 maxlength="500"></textarea>
+        </div>
+        <div id=formbutton>
+        <button type=submit>Enviar</button>
+        </div>
+    </form>
+
+    <div>
+        <fieldset>
+            <legend>Mensagem recebida:</legend>
+            {% for a in mensagens %}
+                <fieldset><legend>{{ a.assunto }}</legend>
+                    <label>{{ a.dtresposta }}</label>
+                    <label>{{ a.referencia }}</label>
+                    <label>{{ a.status }}</label>
+                    <label>{{ a.resposta }}</label>
+                    <label>{{ a.idAluno }}</label>
+                </fieldset>
+            {% endfor %}
+        </fieldset>
+    </div>
+</div>
+{% endblock subconteudo %}

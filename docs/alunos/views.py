@@ -13,7 +13,7 @@ def indexAlunos(request):
         
     }
 
-    return render(request, 'indexalunos.html', contexto)
+    return render(request, 'areadoaluno.html', contexto)
 
 def cadastroAluno(request):
     try:
@@ -95,7 +95,7 @@ def areaDoAluno(request):
        'title':'Área do aluno',
     }
     return render(request, 'areadoaluno.html', contexto)
-
+    
 def mensagensAluno(request):
     try:
         mensagens = Mensagem.objects.filter(idaluno=request.sessao.usuarioaluno.id)
@@ -119,7 +119,7 @@ def mensagensAluno(request):
             conteudo = request.POST.get('conteudo'),
         )
         
-        return redirect('/alunos/areadoaluno/')
+        return redirect('/alunos/principal/')
 
 
     return render(request, 'mensagens.html', contexto)

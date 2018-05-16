@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
+from core.models.alunos import Aluno
+from utils.utils import geraNumeroRA
 from core.models.professores import Professor
+from core.models.mensagens import Mensagem
 
 
 def listaProfessor(request):
     contexto = {
         'professores': Professor.objects.all()
     }
-    return render(request, 'indexProfessor.html', contexto)
+    return render(request, 'areadoprofessor.html', contexto)
 
 
 def cadastrarProfessor(request):
@@ -75,3 +78,41 @@ def alterarProfessor(request, id):
             contexto['erro']= 'Senhas não conferem!'
     
     return render(request, 'cadastroProfessor.html', contexto)
+
+def areaDoProfessor(request):
+    contexto={
+        'titulo': 'Area do Professor',
+    }
+    return render(request, 'areadoprofessor.html', contexto)
+
+def mensagemProfessor(request):
+   
+    try:
+        mensagens = Mensagem.objects.filter(idProfessor=request.sessao.usuarioprofessor.id)
+        a = mensagens.objects.filter(status='Respondida')
+    except:
+        mensagens = ''
+
+    contexto = {
+        'alunos': Aluno.objects.all(),
+        'professor': request.sessao.usuarioprofessor.nome,
+        'mensagens': a,
+    }
+
+    if request.POST:
+        Mensagem.objects.create(
+            idprofessor = Aluno.objects.get(id=request.sessao.usuarioprofessor.id),
+            assunto = request.POST.get('assunto'),
+            referencia = request.POST.get('referencia'),
+            dtenvio = request.POST.get('dtenvio'),
+            idaluno = Professor.objects.get(id=request.POST.get('idaluno')),
+            conteudo = request.POST.get('conteudo'),
+        )
+        
+        return redirect('/professores/principalprofessor/')
+
+
+    return render(request, 'msgprofessor.html', contexto)
+
+def subPrincioalProf(request):
+    return render(request, 'index2prof.html')

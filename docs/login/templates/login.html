@@ -6,16 +6,16 @@
 
    
         <h2>Área Login</h2>
-     
+        
         <hr>
-        <div class="container-center">
+        <div class="container-center login">
             {% if erro %}
             <p>{{ erro }}</p>
             {% endif %}
         <form method="POST" action="">
         
-            <p>E-mail: <input type="email" name="email" placeholder='exemplo@email.com.br' required/></p>
-            <p>senha: <input type="password" name="senha" required></p>
+            <p><input type="email" name="email" placeholder='Informe seu E-mail' required/></p>
+            <p><input type="password" name="senha" placeholder='Informe sua senha' required></p>
     
             <button class="butao" type="submit">Entrar</button>
     

@@ -7,19 +7,19 @@
         <ul>
             <p id=menu>Menu</p>
 
-            <li><p><a id=aprincipal href='/alunos/principal'>Principal</a></p></li>
+            <li><p><a id=aprincipal href='/professores/principalprofessor'>Principal</a></p></li>
 
             <li><p><a id=anotas href=''>Notas</a></p></li>
 
-            <li><p><a id=amensagens href='/alunos/mensagens'>Mensagens</a></p></li>
+            <li><p><a id=amensagens href='/professores/msgprofessor'>Mensagens</a></p></li>
 
             <li><p><a id=aatividades href=''>Atividades</a></p></li>
         </ul>
     </div>
     <div class=subconteudo>
-        {% block subconteudo %}
+        {% block subconteudoprof %}
         
-        {% endblock subconteudo %}
+        {% endblock subconteudoprof %}
     </div>
 </div>
 {% endblock conteudo %}
