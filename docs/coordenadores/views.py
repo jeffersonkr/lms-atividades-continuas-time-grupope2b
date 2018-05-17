@@ -19,16 +19,20 @@ def incluirCoordenador(request):
         senha = request.POST.get('senha')
         senha2 = request.POST.get('senha2')
         if senha == senha2:
-            coordenador = Coordenador.objects.create(
-                nome = request.POST.get('nome'),
-                email = request.POST.get('email'),
-                celular = request.POST.get('celular'),
-                dtexpiracao = request.POST.get('dtexpiracao'),
-                idlogin = request.POST.get('idlogin'),
-                senha = request.POST.get('senha')
-            )
+            try:
+                coordenador = Coordenador.objects.create(
+                    nome = request.POST.get('nome'),
+                    email = request.POST.get('email'),
+                    celular = request.POST.get('celular'),
+                    dtexpiracao = request.POST.get('dtexpiracao'),
+                    idlogin = request.POST.get('idlogin'),
+                    senha = request.POST.get('senha')
+                )
 
-            return redirect('/coordenadores/')
+                return redirect('/coordenadores/')
+            except:
+                contexto['erro']: 'Email ou celular já cadastrado'
+                return redirect('/coordenadores/incluir')
 
         else:
             contexto['erro']: 'Senhas não conferem.'
@@ -47,16 +51,20 @@ def alterarCoordernador(request, id):
         senha2 = request.POST.get('senha2'),
 
         if senha == senha2:
-            a = Coordenador.objects.get(id=id)
-            a.nome = request.POST.get('nome')
-            a.email = request.POST.get('email')
-            a.celular = request.POST.get('celular')
-            a.dtexpiracao = request.POST.get('dataexpiracao')
-            a.idlogin = request.POST.get('idlogin')
-            a.senha = request.POST.get('senha')
-            a.save()
+            try:
+                a = Coordenador.objects.get(id=id)
+                a.nome = request.POST.get('nome')
+                a.email = request.POST.get('email')
+                a.celular = request.POST.get('celular')
+                a.dtexpiracao = request.POST.get('dataexpiracao')
+                a.idlogin = request.POST.get('idlogin')
+                a.senha = request.POST.get('senha')
+                a.save()
 
-            return redirect('/coordenadores/')
+                return redirect('/coordenadores/')
+            except:
+                contexto['erro']: 'Email ou celular já cadastrado'
+                return redirect('/coordenadores/incluir')
         
         else:
             contexto['erro']: 'Senhas não conferem'
