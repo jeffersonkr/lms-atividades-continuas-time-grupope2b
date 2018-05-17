@@ -24,18 +24,23 @@
                 <li>
                     <a class=borda href="/">Home</a>
                 </li>
+                
+                {% if request.sessao.usuarioprofessor %}
                 <li>
                     <a class=borda id=areaprofessor href="/professores/principalprofessor">Area Professor</a>
                 </li>
+                {% elif request.sessao.usuarioaluno %}
                 <li>
                     <a class=borda id=areaaluno href="/alunos/principal">Area Aluno</a>
                 </li>
+                {% elif request.sessao.usuariocoordenador %}
                 <li>
                     <a class=borda id=crud href="/adm">CRUD</a>
                 </li>
                 <li>
                     <a class=borda id=areacoordenador href="/coordenadores">Coordenador</a>
                 </li>
+                {% endif %}
                 <li>
                     <a class=borda  href="/cursos">Cursos</a>
                 </li>
