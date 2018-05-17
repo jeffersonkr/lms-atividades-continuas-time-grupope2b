@@ -28,4 +28,4 @@ senha: senha
 
 Para acesso à área de aluno é necessario realizar cadastro de aluno no CRUD e efetivar login com o email e senha do aluno.
 
-Para acesso à área de professor é necessario realizar cadastro de professor no CRUD e efetivar login com o email e senha do aluno.
+Para acesso à área de professor é necessario realizar cadastro de professor no CRUD e efetivar login com o email e senha do professor.
