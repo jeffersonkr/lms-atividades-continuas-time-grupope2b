@@ -14,6 +14,9 @@ class GuardaMiddleware(object):
             if request.path_info.startswith('/alunos/'):
                 if not hasattr(request, 'sessao'):
                     return redirect('/login/')
+            elif request.path_info.startswith('/professores/'):
+                if not hasattr(request, 'sessao'):
+                    return redirect('/login/')
 
         response = self.get_response(request)
         return response
