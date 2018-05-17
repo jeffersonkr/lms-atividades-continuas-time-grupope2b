@@ -51,14 +51,14 @@
                 <div class=menudireita>
                 {% if request.sessao.usuarioaluno %}
 
-                <li><a href="/alunos/alterar/{{ request.sessao.usuarioaluno.id }}"><span class=login>{{request.sessao.usuarioaluno}}</span></a></li>
+                <li><a href="/adm/alunos/alterar/{{ request.sessao.usuarioaluno.id }}"><span class=login>{{request.sessao.usuarioaluno}}</span></a></li>
                 <li><a href="/login/sair"><span class=logout>Sair</span></a></li>
                 <!-- FIM DA SESSÃO ALUNO-->
 
                 <!--SESSÃO PROFESSOR-->
                 {% elif request.sessao.usuarioprofessor %}
 
-                <li><a href="/professores/alterar/{{ request.sessao.usuarioprofessor.id }}"><span class=login>{{request.sessao.usuarioprofessor}}</span></a></li>
+                <li><a href="/adm/professores/alterar/{{ request.sessao.usuarioprofessor.id }}"><span class=login>{{request.sessao.usuarioprofessor}}</span></a></li>
                 <li><a href="/login/sair"><span class=logout>Sair</span></a></li>
                 <!--FIM DA SESSÃO PROFESSOR-->
 
