@@ -6,6 +6,7 @@
     <hr>
     <div class='container-center'>
         <form method='POST'action=''>
+            {% csrf_token %}
         <table>
             <tr>
                 <td><label name='nome'>Nome: </label></td>

@@ -25,23 +25,26 @@ def cadastroAluno(request):
     contexto={
         'geradorra': ra
     }
-    
+
     if request.POST:
         senha = request.POST.get('senha'),
         senha2 = request.POST.get('senha2'),
 
         if senha == senha2:
-            Aluno.objects.create(
-                nome = request.POST.get('nome'),
-                email = request.POST.get('email'),
-                celular = request.POST.get('celular'),
-                idlogin = request.POST.get('idlogin'),
-                senha = request.POST.get('senha'),
-                dtexpiracao = request.POST.get('dataexpiracao'),
-                ra = request.POST.get('ra'),
-                foto = request.POST.get('foto'),
-            )
-            return redirect('/adm/alunos/')
+            try:
+                Aluno.objects.create(
+                    nome = request.POST.get('nome'),
+                    email = request.POST.get('email'),
+                    celular = request.POST.get('celular'),
+                    idlogin = request.POST.get('idlogin'),
+                    senha = request.POST.get('senha'),
+                    dtexpiracao = request.POST.get('dataexpiracao'),
+                    ra = request.POST.get('ra'),
+                    foto = request.POST.get('foto'),
+                )
+                return redirect('/adm/alunos/')
+            except:
+                contexto['erro']='Email ou celular já cadastrado'
         else:
             contexto['erro']='Senhas não conferem!'
 
@@ -60,24 +63,27 @@ def alterarAluno(request, id):
         senha2 = request.POST.get('senha2'),
 
         if senha == senha2:
+            try:
+                a = Aluno.objects.get(id=id)
+                a.nome = request.POST.get('nome')
+                a.email = request.POST.get('email')
+                a.celular = request.POST.get('celular')
+                a.idlogin = request.POST.get('idlogin')
+                a.senha = request.POST.get('senha')
+                a.dtexpiracao = request.POST.get('dataexpiracao')
+                a.ra = request.POST.get('ra')
+                a.foto = request.POST.get('foto')
 
-            a = Aluno.objects.get(id=id)
-            a.nome = request.POST.get('nome')
-            a.email = request.POST.get('email')
-            a.celular = request.POST.get('celular')
-            a.idlogin = request.POST.get('idlogin')
-            a.senha = request.POST.get('senha')
-            a.dtexpiracao = request.POST.get('dataexpiracao')
-            a.ra = request.POST.get('ra')
-            a.foto = request.POST.get('foto')
+                a.save()
 
-            a.save()
-
-            return redirect('/adm/alunos/')
+                return redirect('/adm/alunos/')
+            except:
+                contexto['erro'] = 'Email ou celular já cadastrado'
+                return redirect('/adm/alunos/cadastroaluno')
 
         else:
             contexto['erro'] = 'Senhas não conferem'
-    
+
     return render(request, 'cadastroaluno.html', contexto)
 
 def removerAluno(request, id):
@@ -89,7 +95,7 @@ def removerAluno(request, id):
         aluno = Aluno.objects.get(id=id).delete()
 
         return redirect('/adm/alunos/')
-    
+
     return render(request, 'indexalunos.html', contexto)
 
 def listaProfessor(request):
@@ -103,21 +109,24 @@ def cadastrarProfessor(request):
     contexto={}
 
     if request.POST:
-        
+
         senha = request.POST.get('senha')
         senha2 = request.POST.get('senha2')
         if senha == senha2:
-            Professor.objects.create(
-                nome = request.POST.get('nome'),
-                email = request.POST.get('email'),
-                celular = request.POST.get('celular'),
-                idlogin = request.POST.get('idlogin'),
-                senha = request.POST.get('senha'),
-                dtexpiracao = request.POST.get('dataexpiracao'),
-                apelido = request.POST.get('apelido'),
-                
-            )
-            return redirect('/adm/professores/')
+            try:
+                Professor.objects.create(
+                    nome = request.POST.get('nome'),
+                    email = request.POST.get('email'),
+                    celular = request.POST.get('celular'),
+                    idlogin = request.POST.get('idlogin'),
+                    senha = request.POST.get('senha'),
+                    dtexpiracao = request.POST.get('dataexpiracao'),
+                    apelido = request.POST.get('apelido'),
+
+                )
+                return redirect('/adm/professores/')
+            except:
+                contexto['erro'] = 'Email ou celular já cadastrado'
 
         else:
             contexto['erro']= 'Senhas não conferem!'
@@ -148,20 +157,23 @@ def alterarProfessor(request, id):
         senha2 = request.POST.get('senha2')
 
         if senha == senha2:
-            professor = Professor.objects.get(id=id)
+            try:
+                professor = Professor.objects.get(id=id)
 
-            professor.nome = request.POST.get('nome'),
-            professor.email = request.POST.get('email'),
-            professor.celular = request.POST.get('celular'),
-            professor.idlogin = request.POST.get('idlogin'),
-            professor.senha = request.POST.get('senha'),
-            professor.dtexpiracao = request.POST.get('dataexpiracao'),
-            professor.apelido = request.POST.get('apelido'),
+                professor.nome = request.POST.get('nome'),
+                professor.email = request.POST.get('email'),
+                professor.celular = request.POST.get('celular'),
+                professor.idlogin = request.POST.get('idlogin'),
+                professor.senha = request.POST.get('senha'),
+                professor.dtexpiracao = request.POST.get('dataexpiracao'),
+                professor.apelido = request.POST.get('apelido'),
 
-            professor.save()
+                professor.save()
 
-            return redirect('/professores/')
+                return redirect('/professores/')
+            except:
+                contexto['erro']= 'Email ou celular já cadastrado'
         else:
             contexto['erro']= 'Senhas não conferem!'
-    
+
     return render(request, 'cadastroProfessor.html', contexto)

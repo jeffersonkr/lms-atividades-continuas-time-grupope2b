@@ -11,6 +11,7 @@
         <p>{{ erro }}</p>
     {% endif %}
     <form name='cadastroprofessor' method='POST' action=''>
+        {% csrf_token %}
         <table>
             <tr>
                 <td><p><label name='nome'>Nome: </label></p></td>
@@ -44,7 +45,7 @@
                 <td><p><label name='dataexpiracao'>Data expiração: </label></p></td>
                 <td><p><input type='date' name='dataexpiracao' value='{{ professor.dataexpiracao }}'/></p></td>
             </tr>
-            
+
             <tr>
                 <td><p><button class="butao" type='reset'>Limpar</button></p></td>
                 <td><p id=mensagem></p><p><button type='submit' name='cadastrar' class="butao" >Cadastrar</button></p></td>

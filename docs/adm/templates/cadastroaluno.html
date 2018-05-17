@@ -10,7 +10,8 @@
     {% if erro %}
         <p>{{ erro }}</p>
     {% endif %}
-    <form name='cadastroaluno' method='POST' action=''>
+    <form name='cadastroaluno' method='POST' action>
+        {% csrf_token %}
         <table>
             <tr>
                 <td><p><label name='nome'>Nome: </label></p></td>
