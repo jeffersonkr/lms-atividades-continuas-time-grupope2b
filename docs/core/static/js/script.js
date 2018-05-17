@@ -15,3 +15,15 @@
             document.getElementsByName('cadastrar')[0].type = 'button';
         }
     }
+
+var removemenus = function() {
+    if(request.sessao.usuarioaluno.email == document.getElementsByName('email').value){
+        document.getElementById('areaaluno').style.display = 'block';
+    } else if(request.sessao.usuarioprofessor == document.getElementsByName('email').value) {
+        document.getElementById('areaprofessor').style.display = 'block';
+    } else if(request.sessao.usuariocoordenador == document.getElementsByName('email').value){
+        document.getElementById('areacoordenador').style.display = 'block';
+        document.getElementById('crud').style.display = 'block';
+    }
+
+}

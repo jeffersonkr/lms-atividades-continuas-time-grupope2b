@@ -6,7 +6,7 @@
     <hr>
     
     <div class="table-center">
-    <a href="/alunos/cadastroaluno"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
+    <a href="cadastroaluno/"><img src="{% static 'imagens/add-file.png' %}" width=25px tag='Adicionar' title='Adicionar'/></a>
     <table>
         <tr class="cab">
             <th>Ações</th>
@@ -18,8 +18,8 @@
         </tr>
         {% for aluno in alunos %}
             <tr>
-                <td><a href="/alunos/alterar/{{ aluno.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
-                    <a href="/alunos/remover/{{ aluno.id }}"><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
+                <td><a href="alterar/{{ aluno.id }}"><img src="{% static 'imagens/edit-file.png' %}" width=25px title='Editar' tag='Editar'/></a>
+                    <a href="remover/{{ aluno.id }}"><img src="{% static 'imagens/filled-trash.png' %}" width=25px title='Excluir' tag='Excluir' /></a>
                 </td>
                 <td>{{ aluno.nome }}</td>
                 <td>{{ aluno.ra }}</td>
