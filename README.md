@@ -9,6 +9,9 @@ linguagem de programação: Python, JS
 
 linguagem de marcação: HTML, CSS
 
+BD SQLServer
+
+
 Framework: Django
 
 
